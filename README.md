@@ -8,7 +8,7 @@
 
 ## About
 
-I'm earning a User-Centered Data Science certificate at FSU and spending most of my time building Python and AI projects. This site is a work in progress — more projects being added regularly.
+I'm earning an Information Architecture certificate along with my studies and have been spending a lot of time lately building Python and AI projects. This site is a work in progress with more projects being added regularly! :) 
 
 ---
 
