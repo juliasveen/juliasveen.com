@@ -156,47 +156,90 @@ p {
 	color: white;
 }
 
-/* Hero section Styles */
-#hero {
-	min-height: 100vh;
-    height: auto;
-	width: 100%;
-	padding: 15rem 0 10rem 0;
+/* --- UPDATED HERO SECTION --- */
+#hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    min-height: 80vh;
 }
-#hero .left .heading {
-	font-size: 6rem;
-	font-family: 'Montserrat';
-	font-weight: 900;
+
+#hero .left {
+    flex: 1;
 }
+
+#hero .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
 #hero .right img {
-	width: 100%;
-	max-width: 450px;
-	height: 600px;
-	object-fit: cover;
-	border-radius: 12px;
+    width: 100%;
+    max-width: 400px; /* Adjust based on your preference */
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
 }
 
-/* Footer & Copyright */
-#footer {
-	background-color: #7a3861;
-	color: white;
-	padding: 6rem 0 4rem 0;
-}
-#copyright {
-	padding: 2rem 0;
-	background-color: #7a3861;
-    border-top: 1px solid rgba(255,255,255,0.1);
+/* --- UPDATED PROJECT GRID --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    padding: 2rem 0;
 }
 
+.project-card {
+    background: #fffdf7;
+    border-radius: 40px;
+    padding: 4rem 3rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+    /* Expansion Transition */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+/* Expansion Effect on Highlight/Hover */
+.project-card:hover {
+    transform: scale(1.05); /* Makes the card expand */
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.card-icon {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 2rem;
+}
+
+.card-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 3rem;
+    color: var(--secondary-gray);
+    flex-grow: 1; /* Pushes buttons to the bottom */
+}
+
+.project-card .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Responsive fix for mobile */
 @media only screen and (max-width: 768px) {
-	#hero .container {
-		flex-direction: column-reverse;
-	}
-    #navigation {
-		right: 10px;
-		top: 10px;
-	}
-    .project-grid {
-        grid-template-columns: 1fr;
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #hero .right img {
+        max-width: 300px;
     }
 }
