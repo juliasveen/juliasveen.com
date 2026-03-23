@@ -70,11 +70,12 @@ p {
 	margin-bottom: 10rem;
 }
 
-/* --- NEW PROJECT GRID & CARDS --- */
+/* --- UPDATED PROJECT GRID --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
+    gap: 4rem; /* Increased gap for a cleaner look */
+    padding: 2rem;
 }
 
 .project-card {
@@ -86,53 +87,46 @@ p {
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    
+    /* Animation settings */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    border: 2px solid transparent;
 }
 
+/* --- THE EXPANSION EFFECT --- */
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.05); /* Expands the card slightly */
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.1); /* Adds depth */
+    background-color: #ffffff;
+    border: 2px solid var(--primary-color); /* Optional: adds a colored border on highlight */
 }
 
 .card-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px; /* Slightly larger for impact */
+    height: 120px;
     margin-bottom: 3rem;
+    transition: transform 0.4s ease;
 }
 
-.card-label {
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.card-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 3rem;
-    line-height: 1.2;
-    margin-bottom: 2.5rem;
-    color: #333;
+.project-card:hover .card-icon {
+    transform: rotate(-5deg) scale(1.1); /* Fun little wiggle on the icon */
 }
 
 .card-text {
     font-size: 1.4rem;
     line-height: 1.8;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     color: var(--secondary-gray);
-    flex-grow: 1;
+    flex-grow: 1; /* This pushes the buttons to the bottom regardless of text length */
 }
 
-/* Card Buttons */
-.card-btn {
-    display: inline-block;
-    padding: 1.4rem 3.5rem;
-    border-radius: 50px;
-    color: white;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    transition: 0.3s ease;
+.project-card .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: auto; /* Ensures alignment at the bottom */
 }
 
 .btn-orange { background-color: var(--card-orange); }
