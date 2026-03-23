@@ -22,18 +22,22 @@ if(scrollButton){
 // Hamburger Menu events
 hamburgerMenu.addEventListener('click', ()=>{
   navContent.classList.add('show');
-  document.body.style.overflow="hidden";
+  document.body.style.overflow = "hidden"; // Prevents background scrolling when menu is open
 });
+
 closeNavButton.addEventListener('click', ()=>{
   navContent.classList.remove('show');
-  document.body.style.overflow="initial";
+  document.body.style.overflow = "auto"; // Restores scrolling
 });
-navLinks.forEach( link => {
-  link.addEventListener('click', ()=> {
-    navContent.classList.remove('show');
-    document.body.style.overflow="initial";
-  })
-})
+
+// Update the scroll logic for better browser support
+window.addEventListener('scroll', ()=> {
+    if(window.scrollY > (window.innerHeight * 1.2)){
+      scrollButton.style.display = "flex";
+    } else {
+      scrollButton.style.display = "none";
+    }
+});
 
 // Typing Effect Code
 const typedText = document.getElementById('typed-text');
