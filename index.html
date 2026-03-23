@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="./star.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body>
   <!-- Scroll Top Button -->
   <div class="scroll-top">
@@ -41,7 +41,7 @@
       </nav>
     </div>
   </div>
- 
+
   <!-- Hero section -->
   <section id="hero">
     <div class="container">
@@ -49,13 +49,13 @@
   <h3 class="subheading" style="opacity: 1; animation: none; margin-bottom: 1rem;">
     <span id="typed-text"></span><span class="cursor">&nbsp;</span>
   </h3>
- 
+
   <h1 class="heading">
     <div class="wrapper">Welcome</div>
     <div class="wrapper">to my</div>
     <div class="wrapper">website! :)</div>
   </h1>
- 
+
   <p class="card-desc">⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning a User-Centered Data Science certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI.
           I am working toward a career in data science or AI development and love experimenting with new tools and ideas that help me grow these skills.
           Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮</p>
@@ -71,65 +71,87 @@
       </div>
 </div>
   </section>
- 
+
+  <!-- projects -->
   <section id="projects">
     <div class="container">
       <h2 class="section-heading" data-outline="Projects">Projects</h2>
-      
-      <div class="project-grid">
-        
-        <div class="project-card">
-          <div class="card-icon">
-            <img src="images/stitchandscout.png" alt="Stitch and Scout">
+      <div class="all-items">
+        <div class="item">
+          <div class="left">
+            <div class="img">
+              <img src="images/dodgerstadium.jpg" alt="">
+            </div>
           </div>
-          <p class="card-label">AI Resale Pricing Tool</p>
-          <h2 class="card-title">Stitch & Scout</h2>
-          <p class="card-text">Pricing secondhand items is tedious. Stitch & Scout cuts that down to a single photo upload using Gemini Vision and a Random Forest model trained on ~2,300 eBay records. Includes a profit/ROI calculator and printable PDF hang tags.</p>
-          <div class="buttons">
-            <a href="https://stitch-and-scout.streamlit.app/" class="card-btn btn-orange" target="_blank">Live Demo</a>
-            <a href="https://github.com/juliasveen/Stitch-and-Scout" class="card-btn btn-blue" target="_blank">Code</a>
-          </div>
-        </div>
- 
-        <div class="project-card">
-          <div class="card-icon">
-            <img src="images/dodgerstadium.jpg" alt="Dodgers Stadium">
-          </div>
-          <p class="card-label">Sports Analytics</p>
-          <h2 class="card-title">Dodgers Stadium Attendance</h2>
-          <p class="card-text">Regression analysis on Dodgers Stadium attendance from 2014–2022. Built models to identify how opponent, team performance, and game-day variables drive capacity. Findings applicable to marketing and ticket pricing.</p>
-          <div class="buttons">
-            <a href="https://github.com/juliasveen/Sports-Analytics-Case-Studies/tree/master/Case%20Study%201" class="card-btn btn-orange" target="_blank">View Project</a>
-          </div>
-        </div>
- 
-        <div class="project-card">
-          <div class="card-icon">
-            <img src="images/nwsl.jpg" alt="NWSL xG Model">
-          </div>
-          <p class="card-label">Women's Soccer Data</p>
-          <h2 class="card-title">Expected Goals (xG) Model</h2>
-          <p class="card-text">Logistic regression model predicting shot conversion probability in the 2018 NWSL season. Uses shot location and defensive pressure to evaluate player finishing performance against expectations.</p>
-          <div class="buttons">
-            <a href="https://github.com/juliasveen/Sports-Analytics-Case-Studies/tree/master/Case%20Study%202" class="card-btn btn-blue" target="_blank">View Project</a>
-          </div>
-        </div>
- 
-        <div class="project-card">
-          <div class="card-icon">
-            <img src="images/amazonredesignss.png" alt="Amazon Redesign">
-          </div>
-          <p class="card-label">UX Design Prototype</p>
-          <h2 class="card-title">Amazon UX Redesign</h2>
-          <p class="card-text">High-fidelity prototype focused on streamlining navigation and personalizing the user journey. Restructured information architecture with an intuitive Shop by Department menu and AI suggestions.</p>
-          <div class="buttons">
-            <a href="documents/UX Design - Amazon Redesign Prototype.pdf" class="card-btn btn-orange" target="_blank">Preview</a>
-          </div>
-        </div>
+          <div class="right">
+            <h2 class="project-title">Attendance Case Study - Dodger Stadium Analysis</h2>
+            <h3 class="project-sub-title">Language(s): R</h3>
+            <p class="project-desc">I conducted a data analysis project on Dodgers Stadium attendance patterns from 2014 to 2022 for my Applied Data Analytics in Sports course. Using R, 
+              I managed the entire process—including cleaning and merging datasets—to build regression models that identified how team performance, timing, and specific opponents impact 
+              stadium capacity. This project provided real-world insights to help the Dodgers organization optimize their marketing and ticket strategies.</p>
+            <div class="buttons">
+              <a href="documents/Attendance Case Study and Code.docx" class="primary-btn outline external-link" target="_blank"> <span>View</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
 
-      </div> </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">
+            <div class="img">
+              <img src="images/amazonredesignss.png" alt="">
+            </div>
+          </div>
+          <div class="right">
+            <h2 class="project-title">Amazon Redesign Prototype</h2>
+            <h3 class="project-sub-title">Canva & Powerpoint
+            </h3>
+            <p class="project-desc">For this UX Design project, I developed a mock high-fidelity prototype for an Amazon redesign focused on streamlining the navigation and personalizing the user journey. 
+              By restructuring the information architecture, I introduced a more intuitive "Shop by Department" drop-down menu and integrated automatic AI suggestions based on real-time browsing history 
+              to enhance product discoverability. This project allowed me to tackle the complexities of a large-scale e-commerce platform, refining it into a cleaner, more user-centric prototype that prioritizes 
+              ease of use and engagement.</p>
+            <div class="buttons">
+              <a href="documents/UX Design - Amazon Redesign Prototype.pdf" class="primary-btn outline external-link"target="_blank"> <span>Preview</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="left">
+            <div class="img">
+              <img src="./image/project-2.jpg" alt="">
+            </div>
+          </div>
+          <div class="right">
+            <h2 class="project-title">Prinazz Website</h2>
+            <h3 class="project-sub-title">A website for music studio</h3>
+            <p class="project-desc">Piranz is one of the famous music composer in UAE. The challenge was to keep the
+              music environment in the web. It was
+              hard but in the end
+              we provided a good quality website that satisfied the client.</p>
+            <div class="buttons">
+              <a href="#" class="primary-btn">Know More</a>
+              <a href="#" class="primary-btn outline external-link"> <span>Preview</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
- 
+
   <!-- Footer Section -->
   <section id="footer">
     <div class="container">
@@ -142,8 +164,8 @@
         <div class="col-2">
           <h1 class="column-heading">Contact<br>Info</h1>
           <ul>
-            <li><a href="/cdn-cgi/l/email-protection#91fbe4fdf8f0e2e7f4f4fff7e2e4d1f6fcf0f8fdbff2fefc"><span class="__cf_email__" data-cfemail="0f657a63666e7c796a6a61697c7a4f68626e6663216c6062">[email&#160;protected]</span></a></li>
-            <li><a href="/cdn-cgi/l/email-protection#39535d4a0b0852795f4a4c175c5d4c"><span class="__cf_email__" data-cfemail="dcb6b8afeeedb79cbaafa9f2b9b8a9">[email&#160;protected]</span></a></li>
+            <li><a href="mailto:juliasveenfsu@gmail.com">juliasveenfsu@gmail.com</a></li>
+            <li><a href="mailto:jds21k@fsu.edu">jds21k@fsu.edu</a></li>
           </ul>
           <ul class="social-icons">
             <li><a href="https://www.linkedin.com/in/julia-sveen-70b5a4250"><img src="icons/linkedin.png" alt="linkedin"></a></li>
@@ -166,5 +188,39 @@
       <p> &copy; Copyright 2026 Julia Sveen. All Rights Reserved</p>
     </div>
   </section>
- 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+
+  <script src="script.js"></script>
+
+<!-- 
+  <section id="stats">
+    <div class="container">
+      <h2 class="section-heading" data-outline="Stats">Stats</h2>
+      <div class="all-items">
+        <div class="item">
+          <h2 class="number">50+</h2>
+          <h3 class="stats-sub-heading">Projects done</h3>
+          <p>I worked on more than 50+ projects. I know how to make things fascinating and eye-catching. Making high
+            performance website is always a sign of mine.</p>
+        </div>
+        <div class="item">
+          <h2 class="number">30+</h2>
+          <h3 class="stats-sub-heading">Happy clients</h3>
+          <p>I worked with more than 30+ clients. Client satisfaction is my main priority. I generally attempt to
+            complete the work
+            before the deadline.</p>
+        </div>
+        <div class="item">
+          <h2 class="number">4+</h2>
+          <h3 class="stats-sub-heading">Years experience</h3>
+          <p>I worked with more than 30+ clients. Client satisfaction is my main priority. I generally attempt to
+            complete the work
+            before the deadline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+-->
+
+</body>
+
+</html>
