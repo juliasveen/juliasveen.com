@@ -1,226 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>juliasveen.com</title>
-  <link rel="shortcut icon" href="./star.png" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="star.png">
 </head>
-
 <body>
-  <!-- Scroll Top Button -->
-  <div class="scroll-top">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7l4-4m0 0l4 4m-4-4v18" />
-    </svg>
-  </div>
-  <!-- Navigation -->
-  <section id="navigation">
-    <div class="nav-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+      <div class="menu-icon" id="menu-toggle">&#9776;</div>
     </div>
-  </section>
-  <div id="nav-content">
-    <div class="close-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    </div>
-    <div class="wrapper">
-      <h2 class="section-heading">Menu</h2>
-      <nav>
-        <ul>
-          <li><a data-text="About" href="./index.html#hero">About</a></li>
-          <li><a data-text="Projects" href="./index.html#projects">Projects</a></li>
-          <li><a data-text="Contact" href="./index.html#footer">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
+  </nav>
 
-  <!-- Hero section -->
-  <section id="hero">
-    <div class="container">
-      <div class="left">
-  <h3 class="subheading" style="opacity: 1; animation: none; margin-bottom: 1rem;">
-    <span id="typed-text"></span><span class="cursor">&nbsp;</span>
-  </h3>
-
-  <h1 class="heading">
-    <div class="wrapper">Welcome</div>
-    <div class="wrapper">to my</div>
-    <div class="wrapper">website! :)</div>
-  </h1>
-
-  <p class="card-desc">⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning a User-Centered Data Science certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI.
+  <section id="about" class="fade-in">
+    <div class="section-content">
+      <img src="images/profile.jpeg" alt="Julia Sveen" class="profile-pic">
+      <div class="about-text">
+        <h1>
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </h1>
+        <p>
+           ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning a User-Centered Data Science certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI.
           I am working toward a career in data science or AI development and love experimenting with new tools and ideas that help me grow these skills.
-          Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮</p>
-  <div class="buttons">
-        <a href="documents/Julia Sveen Data Analytics RESUME (1. 26) .pdf" class="primary-btn" download="">Download 1 Page Resume</a>
-    <a href="documents/Master Julia Sveen RESUME (updated 12_25)  (7).pdf" class="primary-btn">Download Master Resume</a>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"></svg>
-    </a>
-  </div>
-</div>
-      <div class="right">
-        <img src="images/profile.jpeg" alt="test">
+          Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. Thank you for checking out my website! ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ 
+        </p>
       </div>
-</div>
-  </section>
-
-  <!-- projects -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-heading" data-outline="Projects">Projects</h2>
-      <div class="all-items">
-        <div class="item">
-          <div class="left">
-            <div class="img">
-              <img src="images/dodgerstadium.jpg" alt="">
-            </div>
-          </div>
-          <div class="right">
-            <h2 class="project-title">Attendance Case Study - Dodger Stadium Analysis</h2>
-            <h3 class="project-sub-title">Language(s): R</h3>
-            <p class="project-desc">I conducted a data analysis project on Dodgers Stadium attendance patterns from 2014 to 2022 for my Applied Data Analytics in Sports course. Using R, 
-              I managed the entire process—including cleaning and merging datasets—to build regression models that identified how team performance, timing, and specific opponents impact 
-              stadium capacity. This project provided real-world insights to help the Dodgers organization optimize their marketing and ticket strategies.</p>
-            <div class="buttons">
-              <a href="documents/Attendance Case Study and Code.docx" class="primary-btn outline external-link" target="_blank"> <span>View</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-
-          </div>
-        </div>
-        <div class="item">
-          <div class="left">
-            <div class="img">
-              <img src="images/amazonredesignss.png" alt="">
-            </div>
-          </div>
-          <div class="right">
-            <h2 class="project-title">Amazon Redesign Prototype</h2>
-            <h3 class="project-sub-title">Canva & Powerpoint
-            </h3>
-            <p class="project-desc">For this UX Design project, I developed a mock high-fidelity prototype for an Amazon redesign focused on streamlining the navigation and personalizing the user journey. 
-              By restructuring the information architecture, I introduced a more intuitive "Shop by Department" drop-down menu and integrated automatic AI suggestions based on real-time browsing history 
-              to enhance product discoverability. This project allowed me to tackle the complexities of a large-scale e-commerce platform, refining it into a cleaner, more user-centric prototype that prioritizes 
-              ease of use and engagement.</p>
-            <div class="buttons">
-              <a href="documents/UX Design - Amazon Redesign Prototype.pdf" class="primary-btn outline external-link"target="_blank"> <span>Preview</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="left">
-            <div class="img">
-              <img src="./image/project-2.jpg" alt="">
-            </div>
-          </div>
-          <div class="right">
-            <h2 class="project-title">Prinazz Website</h2>
-            <h3 class="project-sub-title">A website for music studio</h3>
-            <p class="project-desc">Piranz is one of the famous music composer in UAE. The challenge was to keep the
-              music environment in the web. It was
-              hard but in the end
-              we provided a good quality website that satisfied the client.</p>
-            <div class="buttons">
-              <a href="#" class="primary-btn">Know More</a>
-              <a href="#" class="primary-btn outline external-link"> <span>Preview</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="social-icons">
+      <a href="resumes/resume_11_25.pdf" target="_blank"><img src="icons/resume2.png" alt="resume"></a>
+      <h4>my updated resume!</h4>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <section id="footer">
-    <div class="container">
-      <footer>
-        <div class="col-1">
-          <div class="logo"><a href="#hero">
-            <img src="images/me_star.png" alt="me logo af">
-            </a></div>
+<!--
+  <section id="experience" class="fade-in">
+    <h2>Experience</h2>
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <strong>Information Technology Help Desk Technician</strong><br>
+          <em>Florida State University College of Communication & Information, Tallahassee, FL</em>
         </div>
-        <div class="col-2">
-          <h1 class="column-heading">Contact<br>Info</h1>
-          <ul>
-            <li><a href="mailto:juliasveenfsu@gmail.com">juliasveenfsu@gmail.com</a></li>
-            <li><a href="mailto:jds21k@fsu.edu">jds21k@fsu.edu</a></li>
-          </ul>
-          <ul class="social-icons">
-            <li><a href="https://www.linkedin.com/in/julia-sveen-70b5a4250"><img src="icons/linkedin.png" alt="linkedin"></a></li>
-            <li><a href="https://github.com/juliasveen"><img src="icons/github.png" alt="github"></a></li>
-            <li><a href="https://bitbucket.org/jds21k/lis5377/src/master"><img src="icons/bitbucket.png" alt="bitbucket"></a></li>
-            <li><a href="https://open.spotify.com/user/systerymystery?si=78ccd6e9c7bd43fc"><img src="icons/spotify.png" alt="spotify"></a></li>
-            <li><a href="https://www.instagram.com/juliasveen"><img src="icons/insta.png" alt="instagram"></a></li>
-          </ul>
-        </div>
-        <div class="col-3">
-            <ul>
-            
-          </ul> 
-        </div>
-      </footer>
-    </div>
-  </section>
-  <section id="copyright">
-    <div class="container">
-      <p> &copy; Copyright 2026 Julia Sveen. All Rights Reserved</p>
-    </div>
-  </section>
-
-  <script src="script.js"></script>
-
-<!-- 
-  <section id="stats">
-    <div class="container">
-      <h2 class="section-heading" data-outline="Stats">Stats</h2>
-      <div class="all-items">
-        <div class="item">
-          <h2 class="number">50+</h2>
-          <h3 class="stats-sub-heading">Projects done</h3>
-          <p>I worked on more than 50+ projects. I know how to make things fascinating and eye-catching. Making high
-            performance website is always a sign of mine.</p>
-        </div>
-        <div class="item">
-          <h2 class="number">30+</h2>
-          <h3 class="stats-sub-heading">Happy clients</h3>
-          <p>I worked with more than 30+ clients. Client satisfaction is my main priority. I generally attempt to
-            complete the work
-            before the deadline.</p>
-        </div>
-        <div class="item">
-          <h2 class="number">4+</h2>
-          <h3 class="stats-sub-heading">Years experience</h3>
-          <p>I worked with more than 30+ clients. Client satisfaction is my main priority. I generally attempt to
-            complete the work
-            before the deadline.</p>
-        </div>
+        <div class="date">Sept. 2024 – Present</div>
       </div>
+      <ul>
+        <li>Provide technical support to students, faculty, and staff for Windows and Mac OS, and Office 365 applications</li>
+        <li>Manage user accounts and troubleshoot network issues using Active Directory and remote tools</li>
+        <li>Document and escalate complex issues to higher-level support teams, while maintaining up-to-date knowledge of IT trends and collaborating with team members for timely resolutions
+        </li>
+      </ul>
+    </div>
+  
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <strong>Data Quality Intern</strong><br>
+          <em>Florida Virtual Campus, Tallahassee, FL</em>
+        </div>
+        <div class="date">June 2024 – Aug. 2024</div>
+      </div>
+      <ul>
+        <li>Ensured quality of bibliographic data and batch-loaded MARC files into databases</li>
+        <li>Created analytics and reports using Alma/Oracle Business Analytics</li>
+        <li>Generated comprehensive reports for data trend analyses</li>
+      </ul>
+    </div>
+  
+    <div class="experience-item">
+      <div class="experience-header">
+        <div>
+          <strong>Communications Intern</strong><br>
+          <em>Florida Chapter of the American Planning Association, Tallahassee, FL</em>
+        </div>
+        <div class="date">May 2024 – May 2025</div>
+      </div>
+      <ul>
+        <li>Utilized WordPress for website development and content management.</li>
+        <li>Designed graphics for social media using tools like MailChimp, JotForm, and SproutSocial.</li>
+        <li>Facilitated communications across 12 diverse chapters for smooth collaboration.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="education" class="fade-in">
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="education-header">
+        <div>
+          <strong>Master of Science in Information Technology</strong><br>
+          <em>Florida State University</em>
+        </div>
+        <div class="date">Fall 2025 – Expected Spring 2027</div>
+      </div>
+    </div>
+  
+    <div class="education-item">
+      <div class="education-header">
+        <div>
+          <strong>Bachelor of Science in Information, Communication and Technology</strong><br>
+          <em>Minors in Computer Science & Mathematics</em><br>
+          <em>Florida State University</em>
+        </div>
+        <div class="date">Fall 2021 – Spring 2025</div>
+      </div>
+      <p><strong>GPA:</strong> 3.85</p>
+      <p><em>President’s List: Fall 2021, Spring 2025</em></p>
+      <p><em>Dean’s List: Spring 2022 - Fall 2024</em></p>
+      <p><em>ThinkAI – Vice President, STARS Alliance – Member, AITP - Member</em></p>
     </div>
   </section>
 -->
 
-</body>
+  <section id="portfolio" class="fade-in">
+    <h2>Portfolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <a href="documents/Attendance Case Study and Code.docx" class ="no-style-link">
+        <img src="images/dodgerstadium.jpg" alt="Attendance Case Study - Dodger Stadium Analysis">
+        <h3>Attendance Case Study - Dodger Stadium Analysis</h3>
+        <p>As someone passionate about baseball, I conducted a data analysis project on attendance patterns at Dodgers Stadium from 2014 to 2022 for my Applied Data Analytics in Sports course. My goal was to determine how factors like team performance, specific opponents, and seasonal trends impacted the percentage of stadium capacity filled. I was responsible for the entire analysis process, including data cleaning, merging datasets, and building statistical models in R. I developed multiple regression models to predict attendance trends and evaluated their accuracy using R-squared values, MAE, and RMSE. This project allowed me to apply my data analysis skills to a real-world scenario and provide insights that could help optimize attendance strategies.</p></a>
+      </div>
+      <div class="portfolio-item">
+        <a href="documents/UX Design - Amazon Redesign Prototype.pdf" class ="no-style-link">
+        <img src="images/amazonredesignss.png" alt="Project Two">
+        <h3>Amazon Redesign Prototype</h3>
+        <p>For my UX Design course, I chose to redesign the Amazon website with a focus on improving the user experience. I aimed to declutter the interface, simplify navigation, and introduce features that enhance usability. I incorporated elements like a more intuitive menu, voice search functionality, and AI-based product suggestions to make shopping more efficient. I designed the prototype, ensured interactive elements worked smoothly, and refined the overall structure to create a more seamless and user-friendly experience.</p></a>
+      </div>
+      <div class="portfolio-item">
+        <a href="https://github.com/juliasveen/juliasveen.github.io" target="_blank" class = "no-style-link">
+        <img src="images/githubpages.png" alt="Personal Website/Portfolio">
+        <h3>Personal Website/Portfolio</h3>
+        <p>For this project, I built and hosted my personal website on GitHub Pages to showcase my work, skills, and projects. I designed the site using HTML, CSS, and JavaScript, integrating JavaScript for translations and animations to enhance user interaction. I'm actively working on structuring the site, implementing dynamic features, and managing version control through GitHub. This project is helping me refine my web development skills while establishing an online presence to share my work!</p></a>
+      </div>
 
+      <h4> Currently working on: </h4>
+        <ul>
+          <li>Redoing my case analyses in Python</li>
+          <li>Recipe Generator/Manager</li>
+        </ul>
+      <h3> More projects on my github! ˋ°•*⁀➷ </h3>
+      
+    </div>
+  </section>
+
+<!--
+  <section id="now-playing" class="fade-in">
+  <h2>Now Playing</h2>
+  <div class="now-playing-box">
+    <p id="now-playing-text">Fetching current track...</p>
+  </div>
+</section>
+-->
+
+  <section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/julia-sveen-696284257/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://github.com/juliasveen" target="_blank"><img src="images/github.png" alt="GitHub"></a>
+      <a href="mailto:juliasveenfsu@gmail.com"><img src="images/email.png" alt="Email"></a>
+    </div>
+  </section>
+</body>
 </html>
