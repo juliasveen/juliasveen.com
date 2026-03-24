@@ -1,13 +1,13 @@
-// Navigation Selectors
+// Navigation Elements
 const hamburgerMenu = document.querySelector('.nav-icon');
 const navContent = document.querySelector('#nav-content');
 const closeNavButton = document.querySelector('.close-btn');
 const scrollButton = document.querySelector(".scroll-top");
 
-// 1. Scroll TOP Logic
+// Scroll Behavior
 window.addEventListener('scroll', () => {
-  if (window.scrollY > (window.innerHeight * 0.5)) {
-    scrollButton.style.display = "flex";
+  if (window.scrollY > 400) {
+    scrollButton.style.display = "block";
   } else {
     scrollButton.style.display = "none";
   }
@@ -17,7 +17,7 @@ scrollButton.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// 2. Navigation Toggle
+// Menu Toggle
 hamburgerMenu.addEventListener('click', () => {
   navContent.classList.add('show');
   document.body.style.overflow = "hidden";
@@ -28,12 +28,9 @@ closeNavButton.addEventListener('click', () => {
   document.body.style.overflow = "auto";
 });
 
-// 3. Typing Effect Code
+// Typing Effect
 const typedText = document.getElementById('typed-text');
-const textArray = ['Graphic Designer', '3D Artist', 'Video Editor', 'IT Leader']; // Updated with roles
-const typingDelay = 100;
-const erasingDelay = 75;
-const newTextDelay = 1500;
+const textArray = ['Graphic Designer', '3D Artist', 'Video Editor', 'Content Writer'];
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -41,9 +38,9 @@ function type() {
   if (charIndex < textArray[textArrayIndex].length) {
     typedText.textContent += textArray[textArrayIndex].charAt(charIndex);
     charIndex++;
-    setTimeout(type, typingDelay);
+    setTimeout(type, 100);
   } else {
-    setTimeout(erase, newTextDelay);
+    setTimeout(erase, 2000);
   }
 }
 
@@ -51,14 +48,11 @@ function erase() {
   if (charIndex > 0) {
     typedText.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
     charIndex--;
-    setTimeout(erase, erasingDelay);
+    setTimeout(erase, 50);
   } else {
-    textArrayIndex++;
-    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-    setTimeout(type, typingDelay + 1100);
+    textArrayIndex = (textArrayIndex + 1) % textArray.length;
+    setTimeout(type, 500);
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    if (typedText) setTimeout(type, 500);
-});
+document.addEventListener("DOMContentLoaded", () => setTimeout(type, 1000));

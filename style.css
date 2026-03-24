@@ -1,44 +1,44 @@
 :root {
-    --bg-color: #FBDE9C; 
-    --window-bg: #ffffff;
-    --accent-pink: #EA9DAE; 
-    --border-dark: #45151B; 
+    --bg-color: #FBDE9C; /* Caramel from your color palette */
+    --window-bg: #FFFFFF;
+    --accent-pink: #EA9DAE; /* Mauvelous */
+    --border-dark: #45151B; /* Chocolate Kisses */
+    --royal-orange: #F99256;
     --border-width: 3px;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 body {
-    /* background-image: url('your-star-image.jpg'); /* Replace with your actual filename */
-    background-size: cover; 
-    background-attachment: fixed;
     background-color: var(--bg-color);
-    
+    /* Subtle pixel pattern to replace the stars */
+    background-image: radial-gradient(var(--border-dark) 1px, transparent 1px);
+    background-size: 20px 20px;
+    /* background-opacity: 0.05; */
     font-family: 'VT323', monospace;
     color: var(--border-dark);
-    min-height: 100vh;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
-/* This is the main layout fix */
 .zine-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start; /* Prevents windows from stretching vertically to match neighbors */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 800px;
+    margin: 80px auto;
 }
 
-/* Make Windows stand out against the busy background */
+/* Windows are now solid and blocky */
 .window {
     background: var(--window-bg);
     border: var(--border-width) solid var(--border-dark);
-    box-shadow: 12px 12px 0px var(--border-dark); /* Heavier shadow for that 90s feel */
+    box-shadow: 12px 12px 0px var(--border-dark);
     display: flex;
     flex-direction: column;
-    position: relative;
-    z-index: 2;
 }
 
 .window-header {
@@ -48,11 +48,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: var(--border-width) solid var(--border-dark);
 }
 
-.content { 
-    padding: 30px; 
-    background: white; 
+.content { padding: 30px; }
+
+/* Typing Effect Cursor */
+.typing-container { font-size: 1.8rem; margin: 15px 0; min-height: 1.6em; }
+#typed-text { color: var(--accent-pink); border-right: 3px solid var(--border-dark); padding-right: 5px; }
+
+/* Bento Grid for Projects */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
 
-/* Sticker/Icon
+.project-card {
+    border: 2px solid var(--border-dark);
+    padding: 20px;
+    text-align: center;
+    background: var(--bg-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.project-card:hover { background: var(--accent-pink); }
+
+/* Form Elements */
+.retro-input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: var(--border-width) solid var(--border-dark);
+    font-family: inherit;
+    font-size: 1.2rem;
+}
+
+.retro-btn {
+    background: var(--royal-orange);
+    border: var(--border-width) solid var(--border-dark);
+    padding: 10px 25px;
+    font-family: inherit;
+    font-weight: bold;
+    box-shadow: 6px 6px 0px var(--border-dark);
+    cursor: pointer;
+}
+
+.retro-btn:active { transform: translate(4px, 4px); box-shadow: 2px 2px 0px var(--border-dark); }
+
+/* Scroll Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: var(--accent-pink);
+    border: 2px solid var(--border-dark);
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 4px 4px 0px var(--border-dark);
+}
