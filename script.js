@@ -30,7 +30,7 @@ closeNavButton.addEventListener('click', () => {
 
 // Typing Effect
 const typedText = document.getElementById('typed-text');
-const textArray = ['Graphic Designer', '3D Artist', 'Video Editor', 'Content Writer'];
+const textArray = ['IT Leader', 'Aspiring AI Engineer', 'Data Analyst', 'Tech Enthusiast'];
 let textArrayIndex = 0;
 let charIndex = 0;
 
