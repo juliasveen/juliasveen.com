@@ -1,170 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>juliasveen.com</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <link rel="icon" type="image/png" href="star.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zine Portfolio | Dheeman Shrivastav</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <a href="#about">About</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-      <div class="menu-icon" id="menu-toggle">&#9776;</div>
-    </div>
-  </nav>
 
-  <section id="about" class="fade-in">
-    <div class="section-content">
-      <img src="images/profile.jpeg" alt="Julia Sveen" class="profile-pic">
-      <div class="about-text">
-        <h1>
-          <span id="typed-text"></span><span class="cursor">|</span>
-        </h1>
-        <p>
-           ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning a User-Centered Data Science certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI.
-          I am working toward a career in data science or AI development and love experimenting with new tools and ideas that help me grow these skills.
-          Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. Thank you for checking out my website! ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ 
-        </p>
-      </div>
-    </div>
-    <div class="social-icons">
-      <a href="resumes/resume_11_25.pdf" target="_blank"><img src="icons/resume2.png" alt="resume"></a>
-      <h4>my updated resume!</h4>
-    </div>
-  </section>
+    <header id="navigation">
+        <div class="nav-icon">MENU</div>
+    </header>
 
-<!--
-  <section id="experience" class="fade-in">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <div class="experience-header">
-        <div>
-          <strong>Information Technology Help Desk Technician</strong><br>
-          <em>Florida State University College of Communication & Information, Tallahassee, FL</em>
-        </div>
-        <div class="date">Sept. 2024 – Present</div>
-      </div>
-      <ul>
-        <li>Provide technical support to students, faculty, and staff for Windows and Mac OS, and Office 365 applications</li>
-        <li>Manage user accounts and troubleshoot network issues using Active Directory and remote tools</li>
-        <li>Document and escalate complex issues to higher-level support teams, while maintaining up-to-date knowledge of IT trends and collaborating with team members for timely resolutions
-        </li>
-      </ul>
+    <div id="nav-content">
+        <div class="close-btn">X</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-  
-    <div class="experience-item">
-      <div class="experience-header">
-        <div>
-          <strong>Data Quality Intern</strong><br>
-          <em>Florida Virtual Campus, Tallahassee, FL</em>
-        </div>
-        <div class="date">June 2024 – Aug. 2024</div>
-      </div>
-      <ul>
-        <li>Ensured quality of bibliographic data and batch-loaded MARC files into databases</li>
-        <li>Created analytics and reports using Alma/Oracle Business Analytics</li>
-        <li>Generated comprehensive reports for data trend analyses</li>
-      </ul>
-    </div>
-  
-    <div class="experience-item">
-      <div class="experience-header">
-        <div>
-          <strong>Communications Intern</strong><br>
-          <em>Florida Chapter of the American Planning Association, Tallahassee, FL</em>
-        </div>
-        <div class="date">May 2024 – May 2025</div>
-      </div>
-      <ul>
-        <li>Utilized WordPress for website development and content management.</li>
-        <li>Designed graphics for social media using tools like MailChimp, JotForm, and SproutSocial.</li>
-        <li>Facilitated communications across 12 diverse chapters for smooth collaboration.</li>
-      </ul>
-    </div>
-  </section>
 
-  <section id="education" class="fade-in">
-    <h2>Education</h2>
-    <div class="education-item">
-      <div class="education-header">
-        <div>
-          <strong>Master of Science in Information Technology</strong><br>
-          <em>Florida State University</em>
-        </div>
-        <div class="date">Fall 2025 – Expected Spring 2027</div>
-      </div>
-    </div>
-  
-    <div class="education-item">
-      <div class="education-header">
-        <div>
-          <strong>Bachelor of Science in Information, Communication and Technology</strong><br>
-          <em>Minors in Computer Science & Mathematics</em><br>
-          <em>Florida State University</em>
-        </div>
-        <div class="date">Fall 2021 – Spring 2025</div>
-      </div>
-      <p><strong>GPA:</strong> 3.85</p>
-      <p><em>President’s List: Fall 2021, Spring 2025</em></p>
-      <p><em>Dean’s List: Spring 2022 - Fall 2024</em></p>
-      <p><em>ThinkAI – Vice President, STARS Alliance – Member, AITP - Member</em></p>
-    </div>
-  </section>
--->
+    <main class="zine-container">
+        <section id="about" class="window hero">
+            <div class="window-header">
+                <div class="dot-container">
+                    <div class="dot" style="background: #ff5f56;"></div>
+                    <div class="dot" style="background: #ffbd2e;"></div>
+                    <div class="dot" style="background: #27c93f;"></div>
+                </div>
+                <span>MY_PROFILE.EXE</span>
+            </div>
+            <div class="content">
+                <div class="profile-layout">
+                    <div class="profile-text">
+                        <h1>DHEEMAN SHRIVASTAV</h1>
+                        <p class="typing-container">I am a <span id="typed-text"></span></p>
+                        <p>Graphic designer and video editor with 5+ years of experience.</p>
+                    </div>
+                    <div class="profile-img">
+                        <img src="https://via.placeholder.com/150" alt="Avatar"> </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="portfolio" class="fade-in">
-    <h2>Portfolio</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <a href="documents/Attendance Case Study and Code.docx" class ="no-style-link">
-        <img src="images/dodgerstadium.jpg" alt="Attendance Case Study - Dodger Stadium Analysis">
-        <h3>Attendance Case Study - Dodger Stadium Analysis</h3>
-        <p>As someone passionate about baseball, I conducted a data analysis project on attendance patterns at Dodgers Stadium from 2014 to 2022 for my Applied Data Analytics in Sports course. My goal was to determine how factors like team performance, specific opponents, and seasonal trends impacted the percentage of stadium capacity filled. I was responsible for the entire analysis process, including data cleaning, merging datasets, and building statistical models in R. I developed multiple regression models to predict attendance trends and evaluated their accuracy using R-squared values, MAE, and RMSE. This project allowed me to apply my data analysis skills to a real-world scenario and provide insights that could help optimize attendance strategies.</p></a>
-      </div>
-      <div class="portfolio-item">
-        <a href="documents/UX Design - Amazon Redesign Prototype.pdf" class ="no-style-link">
-        <img src="images/amazonredesignss.png" alt="Project Two">
-        <h3>Amazon Redesign Prototype</h3>
-        <p>For my UX Design course, I chose to redesign the Amazon website with a focus on improving the user experience. I aimed to declutter the interface, simplify navigation, and introduce features that enhance usability. I incorporated elements like a more intuitive menu, voice search functionality, and AI-based product suggestions to make shopping more efficient. I designed the prototype, ensured interactive elements worked smoothly, and refined the overall structure to create a more seamless and user-friendly experience.</p></a>
-      </div>
-      <div class="portfolio-item">
-        <a href="https://github.com/juliasveen/juliasveen.github.io" target="_blank" class = "no-style-link">
-        <img src="images/githubpages.png" alt="Personal Website/Portfolio">
-        <h3>Personal Website/Portfolio</h3>
-        <p>For this project, I built and hosted my personal website on GitHub Pages to showcase my work, skills, and projects. I designed the site using HTML, CSS, and JavaScript, integrating JavaScript for translations and animations to enhance user interaction. I'm actively working on structuring the site, implementing dynamic features, and managing version control through GitHub. This project is helping me refine my web development skills while establishing an online presence to share my work!</p></a>
-      </div>
+        <section id="projects" class="window">
+            <div class="window-header"><span>PROJECTS.SYS</span></div>
+            <div class="content bento-grid">
+                <div class="project-card">Graphic Design</div>
+                <div class="project-card">Video Editing</div>
+                <div class="project-card">3D Artist</div>
+            </div>
+        </section>
 
-      <h4> Currently working on: </h4>
-        <ul>
-          <li>Redoing my case analyses in Python</li>
-          <li>Recipe Generator/Manager</li>
-        </ul>
-      <h3> More projects on my github! ˋ°•*⁀➷ </h3>
-      
-    </div>
-  </section>
+        <section id="contact" class="window">
+            <div class="window-header"><span>CONTACT_ME.URL</span></div>
+            <div class="content">
+                <form id="contact-form">
+                    <input type="text" placeholder="Name" class="retro-input">
+                    <input type="email" placeholder="Email" class="retro-input">
+                    <textarea placeholder="Message" class="retro-input"></textarea>
+                    <button type="submit" class="retro-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-<!--
-  <section id="now-playing" class="fade-in">
-  <h2>Now Playing</h2>
-  <div class="now-playing-box">
-    <p id="now-playing-text">Fetching current track...</p>
-  </div>
-</section>
--->
+    <button class="scroll-top">↑ TOP</button>
 
-  <section id="contact" class="fade-in">
-    <h2>Contact</h2>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/julia-sveen-696284257/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://github.com/juliasveen" target="_blank"><img src="images/github.png" alt="GitHub"></a>
-      <a href="mailto:juliasveenfsu@gmail.com"><img src="images/email.png" alt="Email"></a>
-    </div>
-  </section>
+    <script src="script.js"></script>
 </body>
 </html>
