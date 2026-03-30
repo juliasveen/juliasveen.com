@@ -16,7 +16,8 @@
 body {
     background-color: var(--bg-color);
     /* Subtle pixel pattern to replace the stars */
-    background-image: radial-gradient(var(--border-dark) 1px, transparent 1px);
+    /* background-image: radial-gradient(var(--border-dark) 1px, transparent 1px); */
+    background-image: url('https://media.giphy.com/media/26tn7rKhdZosB0k1i/giphy.gif'); /* Example retro background */
     background-size: 20px 20px;
     /* background-opacity: 0.05; */
     font-family: 'VT323', monospace;
