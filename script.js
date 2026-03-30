@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Only run the typing logic if the typed-text span actually exists on the page
   if (typedText) {
-    const textArray = ['IT Leader', 'Aspiring AI Engineer', 'Data Analyst', 'Tech Enthusiast'];
+    const textArray = ['IT Leader', 'Aspiring AI Engineer', 'Data Scientist', 'Tech Enthusiast'];
     let textArrayIndex = 0;
     let charIndex = 0;
 
