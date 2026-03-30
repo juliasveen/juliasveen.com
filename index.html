@@ -41,7 +41,8 @@
                         <div class="typing-container">
                             I am a <span id="typed-text"></span>
                         </div>
-                        <p>IT Leader and Aspiring AI Engineer with 5+ years of experience. Proficient in Python, Machine Learning, and Data Analysis.</p>
+                        <p>⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning 
+                          an Information Architecture certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI. I am working toward a career in data science or AI development and love experimenting with new tools and ideas that help me grow these skills. Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮</p>
                     </div>
                 </div>
             </div>
@@ -59,11 +60,19 @@
         <section id="contact" class="window">
             <div class="window-header"><span>CONTACT_ME.URL</span></div>
             <div class="content">
-                <form id="contact-form">
-                    <input type="text" placeholder="NAME" class="retro-input">
-                    <input type="email" placeholder="EMAIL" class="retro-input">
-                    <textarea placeholder="YOUR MESSAGE..." class="retro-input" rows="4"></textarea>
-                    <button type="submit" class="retro-btn">SEND</button>
-                </form>
+             <form>
+              action="https://formspree.io/f/mzdkroqk"
+              method="POST"
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">EMAIL:</label>
+                <input type="email" id="email" name="_replyto" required>
+
+                <label for="message">MESSAGE:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">SEND</button>
+             </form>
             </div>
         </section>
