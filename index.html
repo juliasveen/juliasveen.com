@@ -51,28 +51,24 @@
         <section id="projects" class="window">
             <div class="window-header"><span>PROJECTS.SYS</span></div>
             <div class="content bento-grid">
-                <div class="project-card">GRAPHIC DESIGN</div>
+                <div class="project-card">Stitch & Scout</div>
                 <div class="project-card">VIDEO EDITING</div>
                 <div class="project-card">3D ARTIST</div>
             </div>
         </section>
 
         <section id="contact" class="window">
-            <div class="window-header"><span>CONTACT_ME.URL</span></div>
-            <div class="content">
-             <form>
-              action="https://formspree.io/f/mzdkroqk"
-              method="POST"
-                <label for="name">NAME:</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="email">EMAIL:</label>
-                <input type="email" id="email" name="_replyto" required>
-
-                <label for="message">MESSAGE:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-
-                <button type="submit">SEND</button>
-             </form>
-            </div>
-        </section>
+          <div class="window-header"><span>CONTACT_ME.URL</span></div>
+          <div class="content">
+            <form id="contact-form" action="https://formspree.io/f/mzdkroqk" method="POST">
+            
+              <input type="text" name="name" placeholder="NAME" class="retro-input" required>
+            
+              <input type="email" name="email" placeholder="EMAIL" class="retro-input" required>
+            
+              <textarea name="message" placeholder="YOUR MESSAGE..." class="retro-input" rows="4" required></textarea>
+            
+              <button type="submit" class="retro-btn">SEND</button>
+           </form>
+        </div>
+      </section>
