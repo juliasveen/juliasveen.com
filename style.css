@@ -117,3 +117,98 @@ body {
     font-family: inherit;
     box-shadow: 4px 4px 0px var(--border-dark);
 }
+
+/* =========================================
+   NAVIGATION MENU STYLES
+   ========================================= */
+
+/* The floating MENU button */
+#navigation {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 100;
+    background: var(--royal-orange);
+    border: var(--border-width) solid var(--border-dark);
+    padding: 5px 15px;
+    box-shadow: 4px 4px 0px var(--border-dark);
+    cursor: pointer;
+}
+
+.nav-icon {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#navigation:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+/* The fullscreen menu overlay (Hidden by default) */
+#nav-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    background-image: radial-gradient(var(--border-dark) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 999;
+    display: none; /* This is why it hides! */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Javascript adds this class to make it appear */
+#nav-content.show {
+    display: flex;
+}
+
+/* The Close Button */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--accent-pink);
+    padding: 5px 15px;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+.close-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-dark);
+}
+
+/* Menu Links */
+#nav-content nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+#nav-content nav ul li {
+    margin: 30px 0;
+}
+
+#nav-content nav ul li a {
+    text-decoration: none;
+    color: var(--window-bg);
+    background: var(--border-dark);
+    padding: 10px 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 8px 8px 0px var(--accent-pink);
+    transition: all 0.2s ease;
+}
+
+#nav-content nav ul li a:hover {
+    background: var(--royal-orange);
+    box-shadow: 12px 12px 0px var(--window-bg);
+}
