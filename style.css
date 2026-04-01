@@ -15,20 +15,14 @@
 
 body {
     background-color: var(--bg-color);
-    
-    /* Your new background image */
-    background-image: url('images/web_bg1.png');
-    
-    /* Fixes the sizing issue! */
+    background-image: url('images/web_bg1.png'); /* Double check this path */
     background-size: cover; 
-    
-    /* Keeps the image in place when scrolling */
     background-attachment: fixed;
     background-position: center;
-    
     font-family: 'VT323', monospace;
     color: var(--border-dark);
     padding: 20px;
+    margin: 0;
 }
 
 .zine-container {
@@ -231,6 +225,12 @@ body {
     flex-shrink: 0; /* Prevents the image from being squished */
     background-color: white;
     padding: 5px;
+}
+
+.profile-img img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* Ensures the text container takes up the rest of the space */
