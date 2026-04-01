@@ -215,43 +215,34 @@ body {
 
 /* --- Profile Layout & Image Styles --- */
 
+/* Container to keep image and text side-by-side */
 .profile-layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px; /* Space between image and text */
 }
 
-/* Make the text take up available space */
+/* Constrains the image size */
+.profile-img {
+    width: 150px; /* Adjust this number to make it even smaller or larger */
+    height: auto;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 6px 6px 0px var(--accent-pink);
+    flex-shrink: 0; /* Prevents the image from being squished */
+    background-color: white;
+    padding: 5px;
+}
+
+/* Ensures the text container takes up the rest of the space */
 .profile-text {
     flex: 1;
 }
 
-/* Style the image container */
-.profile-img {
-    flex-shrink: 0; /* Prevents the image from getting squished */
-}
-
-/* Style the actual image inside */
-.profile-img img {
-    width: 250px; /* Adjust this size to make the image bigger or smaller */
-    height: auto;
-    border: var(--border-width) solid var(--border-dark);
-    box-shadow: 8px 8px 0px var(--accent-pink); /* Cool retro shadow */
-    transform: rotate(3deg); /* Slight tilt for the zine look! */
-    background: white;
-    padding: 10px; /* Creates a polaroid-style white border */
-}
-
-/* Mobile Responsiveness: Stacks the text and image on small screens */
-@media (max-width: 768px) {
+/* Mobile fix: stacks them if the screen is too narrow */
+@media (max-width: 600px) {
     .profile-layout {
-        flex-direction: column-reverse; /* Puts the image above the text on mobile */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-    }
-    
-    .profile-img img {
-        width: 200px;
-        transform: rotate(0deg); /* Flattens it out for mobile */
     }
 }
