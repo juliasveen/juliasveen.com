@@ -17,7 +17,7 @@ body {
     background-color: var(--bg-color);
     
     /* Your new background image */
-    background-image: url('images/wallpaper.png');
+    background-image: url('images/web_bg1.png');
     
     /* Fixes the sizing issue! */
     background-size: cover; 
@@ -211,4 +211,47 @@ body {
 #nav-content nav ul li a:hover {
     background: var(--royal-orange);
     box-shadow: 12px 12px 0px var(--window-bg);
+}
+
+/* --- Profile Layout & Image Styles --- */
+
+.profile-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Make the text take up available space */
+.profile-text {
+    flex: 1;
+}
+
+/* Style the image container */
+.profile-img {
+    flex-shrink: 0; /* Prevents the image from getting squished */
+}
+
+/* Style the actual image inside */
+.profile-img img {
+    width: 250px; /* Adjust this size to make the image bigger or smaller */
+    height: auto;
+    border: var(--border-width) solid var(--border-dark);
+    box-shadow: 8px 8px 0px var(--accent-pink); /* Cool retro shadow */
+    transform: rotate(3deg); /* Slight tilt for the zine look! */
+    background: white;
+    padding: 10px; /* Creates a polaroid-style white border */
+}
+
+/* Mobile Responsiveness: Stacks the text and image on small screens */
+@media (max-width: 768px) {
+    .profile-layout {
+        flex-direction: column-reverse; /* Puts the image above the text on mobile */
+        text-align: center;
+    }
+    
+    .profile-img img {
+        width: 200px;
+        transform: rotate(0deg); /* Flattens it out for mobile */
+    }
 }
