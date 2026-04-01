@@ -330,3 +330,28 @@ body {
         text-align: center;
     }
 }
+
+/* Layout for the buttons under the photo */
+.profile-btns {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+/* A slightly smaller version of your retro button */
+.btn-sm {
+    padding: 8px 12px !important;
+    font-size: 0.9rem !important;
+    text-decoration: none !important;
+    display: inline-block;
+    text-align: center;
+    flex: 1; /* Makes both buttons the same width */
+}
+
+/* Ensure they keep the hover effect and chocolate text */
+.btn-sm:hover {
+    background: var(--accent-pink);
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--border-dark);
+}
