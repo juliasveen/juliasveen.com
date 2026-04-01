@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const navContent = document.querySelector('#nav-content');
   const closeNavButton = document.querySelector('.close-btn');
   const scrollButton = document.querySelector(".scroll-top");
+  const projectCards = document.querySelectorAll('.project-card');
+  const projectModal = document.getElementById('project-modal');
+  const modalClose = document.querySelector('.modal-close');
 
   // Scroll Behavior (Protected with an IF statement)
   if (scrollButton) {
@@ -75,4 +78,39 @@ document.addEventListener("DOMContentLoaded", () => {
     console.warn("Typing effect skipped: Missing <span id='typed-text'></span> in HTML.");
   }
 
+});
+
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Get data from the clicked card
+        const title = card.getAttribute('data-title');
+        const desc = card.getAttribute('data-desc');
+        const img = card.getAttribute('data-img');
+        const link = card.getAttribute('data-link');
+
+        // Populate the modal
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-description').innerText = desc;
+        document.getElementById('modal-img').src = img;
+        document.getElementById('modal-github').href = link;
+        document.getElementById('modal-title-bar').innerText = title + ".SYS";
+
+        // Show the modal
+        projectModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    });
+});
+
+// Close Modal logic
+modalClose.addEventListener('click', () => {
+    projectModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+// Close if clicking outside the window
+window.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        projectModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 });

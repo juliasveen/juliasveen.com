@@ -54,12 +54,55 @@
         <section id="projects" class="window">
             <div class="window-header"><span>PROJECTS.SYS</span></div>
             <div class="content bento-grid">
-                <div class="project-card">STITCH & SCOUT</div>
-                <div class="project-card">2018 NWSL EXPECTED GOALS CASE STUDY</div>
-                <div class="project-card">NFL WR CLUSTERING CASE STUDY</div>
-                <div class="project-card">GITHUB FOR MORE PROJECTS!</div>
+                <div class="project-card" 
+                    data-title="STITCH & SCOUT" 
+                    data-desc="AI-powered resale pricing tool using Gemini Vision and Random Forest models to price items from a single photo." 
+                    data-img="images/demo.gif" 
+                    data-link="https://github.com/juliasveen/stitch-and-scout">
+                    <img src="icons/stitch_icon.png" alt="icon" class="project-icon">
+                    <span>STITCH & SCOUT</span>
+                </div>
+                <div class="project-card" 
+                    data-title="NFL WR CLUSTERING CASE STUDY" 
+                    data-desc="Analysis of NFL wide receiver performance using clustering techniques." 
+                    data-img="images/nfl_wr_clustering.png" 
+                    data-link="https://github.com/juliasveen/nfl-wr-clustering">
+                    <img src="icons/nfl_icon.png" alt="icon" class="project-icon">
+                    <span>NFL WR CLUSTERING MODEL</span>
+                </div>
+                <div class="project-card" 
+                    data-title="NWSL xG MODEL" 
+                    data-desc="Prediction of expected goals in the National Women's Soccer League using machine learning models." 
+                    data-img="images/nwsl_expected_goals.png" 
+                    data-link="https://github.com/juliasveen/nwsl-expected-goals">
+                    <img src="icons/nwsl_icon.png" alt="icon" class="project-icon">
+                    <span>NWSL xG MODEL</span>
+                </div>
+                <div class="project-card" 
+                    data-title="GITHUB FOR MORE PROJECTS!" 
+                    data-desc="Check out my GitHub for more projects!" 
+                    data-img="images/github_projects.png" 
+                    data-link="https://github.com/juliasveen">
+                    <img src="icons/github.png" alt="icon" class="project-icon">
+                    <span>GITHUB FOR MORE PROJECTS!</span>
+                </div>
             </div>
         </section>
+
+    <div id="project-modal" class="modal-overlay">
+        <div class="window modal-window">
+            <div class="window-header">
+                <span id="modal-title-bar">PROJECT_INFO.EXE</span>
+                <div class="modal-close">X</div>
+            </div>
+            <div class="content modal-content">
+                <img id="modal-img" src="" alt="Project Preview">
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+                <a id="modal-github" href="#" target="_blank" class="retro-btn">VIEW ON GITHUB</a>
+            </div>
+        </div>
+    </div>
 
         <section id="contact" class="window">
           <div class="window-header"><span>CONTACT_ME.URL</span></div>
