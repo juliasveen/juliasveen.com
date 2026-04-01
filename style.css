@@ -29,7 +29,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 80px auto;
 }
 
@@ -218,11 +218,11 @@ body {
 
 /* Constrains the image size */
 .profile-img {
-    width: 150px; /* Adjust this number to make it even smaller or larger */
+    width: 250px; /* Increased from 150px */
     height: auto;
     border: var(--border-width) solid var(--border-dark);
     box-shadow: 6px 6px 0px var(--accent-pink);
-    flex-shrink: 0; /* Prevents the image from being squished */
+    flex-shrink: 0; 
     background-color: white;
     padding: 5px;
 }
@@ -235,7 +235,13 @@ body {
 
 /* Ensures the text container takes up the rest of the space */
 .profile-text {
-    flex: 1;
+    font-size: 1.5rem; /* Adjust this number to your liking */
+    line-height: 1.4;
+}
+
+.profile-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
 /* Mobile fix: stacks them if the screen is too narrow */
