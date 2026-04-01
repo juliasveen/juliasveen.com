@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const scrollButton = document.querySelector(".scroll-top");
   
   // --- PROJECT MODAL ELEMENTS ---
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.project-card:not(.link-card)');
   const projectModal = document.getElementById('project-modal');
   const modalClose = document.querySelector('.modal-close');
 

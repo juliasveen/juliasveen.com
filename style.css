@@ -108,6 +108,12 @@ body {
     box-shadow: 6px 6px 0px var(--border-dark);
 }
 
+.link-card {
+    text-decoration: none; /* Removes underline */
+    color: inherit;       /* Keeps your chocolate brown text color */
+    display: flex;        /* Ensures it looks like the other cards */
+}
+
 /* Modal Styling */
 .modal-overlay {
     display: none; /* Hidden by default */
