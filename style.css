@@ -78,38 +78,47 @@ body {
 
 /* Card Icon Styling */
 .project-icon {
-    width: 60px;
-    height: 60px;
-    display: block;
-    margin: 0 auto 10px;
-    image-rendering: pixelated; /* Keeps icons crisp if they are pixel art */
+    width: 50px;    /* Force icons to stay small */
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    image-rendering: pixelated;
 }
 
 /* Updated Expansion Effect */
 .project-card {
-    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 2px solid var(--border-dark);
+    padding: 15px;
+    text-align: center;
+    background: var(--bg-color);
+    font-weight: bold;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    transition: transform 0.2s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.1); /* The highlight expansion */
-    z-index: 5;
+    transform: scale(1.05);
     background: var(--accent-pink);
-    box-shadow: 8px 8px 0px var(--border-dark);
+    box-shadow: 6px 6px 0px var(--border-dark);
 }
 
 /* Modal Styling */
 .modal-overlay {
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Darken background */
     z-index: 2000;
-    display: none; /* Hidden by default */
+    display: none; /* JS will change this to 'flex' */
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .modal-window {
@@ -124,10 +133,11 @@ body {
 }
 
 .modal-content img {
-    width: 100%;
-    border: var(--border-width) solid var(--border-dark);
+    max-width: 100%;
+    max-height: 300px; /* Prevent the pop-up image from being too huge */
+    object-fit: cover;
+    border: 3px solid var(--border-dark);
     margin-bottom: 15px;
-    background: #eee;
 }
 
 .modal-content h2 { margin-bottom: 10px; font-size: 2.5rem; }
