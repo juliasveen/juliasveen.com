@@ -1,31 +1,17 @@
-// Wrap everything in DOMContentLoaded to ensure the HTML loads first
 document.addEventListener("DOMContentLoaded", () => {
   
-  // --- NAVIGATION & UI ELEMENTS ---
+  // --- UI ELEMENTS ---
   const hamburgerMenu = document.querySelector('.nav-icon');
   const navContent = document.querySelector('#nav-content');
   const closeNavButton = document.querySelector('.close-btn');
   const scrollButton = document.querySelector(".scroll-top");
+  
+  // --- PROJECT MODAL ELEMENTS ---
   const projectCards = document.querySelectorAll('.project-card');
   const projectModal = document.getElementById('project-modal');
   const modalClose = document.querySelector('.modal-close');
 
-  // Scroll Behavior (Protected with an IF statement)
-  if (scrollButton) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        scrollButton.style.display = "block";
-      } else {
-        scrollButton.style.display = "none";
-      }
-    });
-
-    scrollButton.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-
-  // Menu Toggle (Protected with IF statements)
+  // Navigation Logic
   if (hamburgerMenu && navContent) {
     hamburgerMenu.addEventListener('click', () => {
       navContent.classList.add('show');
@@ -40,10 +26,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- PROJECT POP-UP LOGIC ---
+  if (projectCards.length > 0 && projectModal) {
+    projectCards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Extract data from HTML attributes
+        const title = card.getAttribute('data-title') || "Project";
+        const desc = card.getAttribute('data-desc') || "No description provided.";
+        const img = card.getAttribute('data-img') || "";
+        const link = card.getAttribute('data-link') || "#";
+
+        // Fill the modal
+        document.getElementById('modal-title').innerText = title;
+        document.getElementById('modal-description').innerText = desc;
+        document.getElementById('modal-img').src = img;
+        document.getElementById('modal-github').href = link;
+        document.getElementById('modal-title-bar').innerText = title + ".SYS";
+
+        // Show the modal
+        projectModal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
+      });
+    });
+  }
+
+  if (modalClose) {
+    modalClose.addEventListener('click', () => {
+      projectModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+  }
+
+  // Close if clicking the dark overlay background
+  window.addEventListener('click', (event) => {
+    if (event.target === projectModal) {
+      projectModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+
   // --- TYPING EFFECT ---
   const typedText = document.getElementById('typed-text');
-  
-  // Only run the typing logic if the typed-text span actually exists on the page
   if (typedText) {
     const textArray = ['IT Leader', 'Aspiring AI Engineer', 'Data Scientist', 'Tech Enthusiast'];
     let textArrayIndex = 0;
@@ -55,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         charIndex++;
         setTimeout(type, 100);
       } else {
-        // Wait at the end of the word, then erase
         setTimeout(erase, 2000);
       }
     }
@@ -66,51 +88,10 @@ document.addEventListener("DOMContentLoaded", () => {
         charIndex--;
         setTimeout(erase, 50);
       } else {
-        // Move to the next word
         textArrayIndex = (textArrayIndex + 1) % textArray.length;
         setTimeout(type, 500);
       }
     }
-
-    // Start the effect
     setTimeout(type, 1000);
-  } else {
-    console.warn("Typing effect skipped: Missing <span id='typed-text'></span> in HTML.");
   }
-
-});
-
-projectCards.forEach(card => {
-    card.addEventListener('click', () => {
-        // Get data from the clicked card
-        const title = card.getAttribute('data-title');
-        const desc = card.getAttribute('data-desc');
-        const img = card.getAttribute('data-img');
-        const link = card.getAttribute('data-link');
-
-        // Populate the modal
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-description').innerText = desc;
-        document.getElementById('modal-img').src = img;
-        document.getElementById('modal-github').href = link;
-        document.getElementById('modal-title-bar').innerText = title + ".SYS";
-
-        // Show the modal
-        projectModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Stop background scrolling
-    });
-});
-
-// Close Modal logic
-modalClose.addEventListener('click', () => {
-    projectModal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-// Close if clicking outside the window
-window.addEventListener('click', (e) => {
-    if (e.target === projectModal) {
-        projectModal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
 });

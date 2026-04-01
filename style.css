@@ -4,6 +4,8 @@
     --accent-pink: #EA9DAE; /* Mauvelous */
     --border-dark: #45151B; /* Chocolate Kisses */
     --royal-orange: #F99256;
+    --puce-red: #642f37;
+    --pastel-purple: #b89dbb;
     --border-width: 3px;
 }
 
@@ -69,7 +71,7 @@ body {
     border: 2px solid var(--border-dark);
     padding: 20px;
     text-align: center;
-    background: var(--bg-color);
+    background: var(--pastel-purple);
     font-weight: bold;
     cursor: pointer;
 }
@@ -90,7 +92,7 @@ body {
     border: 2px solid var(--border-dark);
     padding: 15px;
     text-align: center;
-    background: var(--bg-color);
+    background: var(--pastel-purple);
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -102,12 +104,13 @@ body {
 
 .project-card:hover {
     transform: scale(1.05);
-    background: var(--accent-pink);
+    background: var(--puce-red);
     box-shadow: 6px 6px 0px var(--border-dark);
 }
 
 /* Modal Styling */
 .modal-overlay {
+    display: none; /* Hidden by default */
     position: fixed;
     top: 0;
     left: 0;
