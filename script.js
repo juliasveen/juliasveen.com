@@ -1,17 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   
-  // --- UI ELEMENTS ---
+  // --- NAVIGATION & UI ELEMENTS ---
   const hamburgerMenu = document.querySelector('.nav-icon');
   const navContent = document.querySelector('#nav-content');
   const closeNavButton = document.querySelector('.close-btn');
+  const navLinks = document.querySelectorAll('#nav-content a'); // Grab all links in menu
   const scrollButton = document.querySelector(".scroll-top");
-  
+
   // --- PROJECT MODAL ELEMENTS ---
   const projectCards = document.querySelectorAll('.project-card:not(.link-card)');
   const projectModal = document.getElementById('project-modal');
   const modalClose = document.querySelector('.modal-close');
 
-  // Navigation Logic
+  // Menu Open
   if (hamburgerMenu && navContent) {
     hamburgerMenu.addEventListener('click', () => {
       navContent.classList.add('show');
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Menu Close (X Button)
   if (closeNavButton && navContent) {
     closeNavButton.addEventListener('click', () => {
       navContent.classList.remove('show');
@@ -26,24 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // NEW: Close menu when a link is clicked so you can see the section!
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navContent.classList.remove('show');
+      document.body.style.overflow = "auto";
+    });
+  });
+
   // --- PROJECT POP-UP LOGIC ---
   if (projectCards.length > 0 && projectModal) {
     projectCards.forEach(card => {
       card.addEventListener('click', () => {
-        // Extract data from HTML attributes
         const title = card.getAttribute('data-title') || "Project";
-        const desc = card.getAttribute('data-desc') || "No description provided.";
+        const desc = card.getAttribute('data-desc') || "";
         const img = card.getAttribute('data-img') || "";
         const link = card.getAttribute('data-link') || "#";
 
-        // Fill the modal
         document.getElementById('modal-title').innerText = title;
         document.getElementById('modal-description').innerText = desc;
         document.getElementById('modal-img').src = img;
         document.getElementById('modal-github').href = link;
         document.getElementById('modal-title-bar').innerText = title + ".SYS";
 
-        // Show the modal
         projectModal.style.display = 'flex';
         document.body.style.overflow = 'hidden'; 
       });
@@ -57,9 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close if clicking the dark overlay background
-  window.addEventListener('click', (event) => {
-    if (event.target === projectModal) {
+  // Close modal on outside click
+  window.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
       projectModal.style.display = 'none';
       document.body.style.overflow = 'auto';
     }

@@ -9,6 +9,10 @@
     --border-width: 3px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * { 
     box-sizing: border-box; 
     margin: 0; 
@@ -354,4 +358,39 @@ body {
     background: var(--accent-pink);
     transform: translate(-2px, -2px);
     box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+/* Container to keep the image and buttons stacked vertically */
+.image-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Fix for the Blue/Underlined text */
+.retro-btn.btn-sm {
+    text-decoration: none !important; /* Removes underline */
+    color: var(--border-dark) !important; /* Forces your dark brown color */
+    display: inline-block;
+    text-align: center;
+}
+
+/* Ensures they stay the right color even after being clicked */
+.retro-btn.btn-sm:visited {
+    color: var(--border-dark) !important;
+}
+
+/* Layout for the buttons */
+.profile-btns {
+    display: flex;
+    gap: 10px;
+    width: 100%; /* Makes buttons match the width of the photo area */
+    justify-content: center;
+}
+
+.btn-sm {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    flex: 1; /* Makes both buttons the same size */
 }
