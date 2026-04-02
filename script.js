@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // NEW: Close menu when a link is clicked so you can see the section!
+  // Close menu when a link is clicked so you can see the section!
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navContent.classList.remove('show');

@@ -300,13 +300,13 @@ body {
 
 /* Constrains the image size */
 .profile-img {
-    width: 250px; /* Increased from 150px */
+    width: 300px; /* decrease & increase accordingly */
     height: auto;
     border: var(--border-width) solid var(--border-dark);
     box-shadow: 6px 6px 0px var(--accent-pink);
     flex-shrink: 0; 
     background-color: white;
-    padding: 5px;
+    padding: 7.5px;
 }
 
 .profile-img img {
@@ -368,29 +368,35 @@ body {
     gap: 15px;
 }
 
-/* Fix for the Blue/Underlined text */
-.retro-btn.btn-sm {
-    text-decoration: none !important; /* Removes underline */
-    color: var(--border-dark) !important; /* Forces your dark brown color */
-    display: inline-block;
-    text-align: center;
+/* Fix the Blue Text and Underlines */
+.retro-btn, .btn-sm, .link-card {
+    text-decoration: none !important;
+    color: var(--border-dark) !important; /* Forces the chocolate brown */
 }
 
-/* Ensures they stay the right color even after being clicked */
-.retro-btn.btn-sm:visited {
+.retro-btn:visited, .btn-sm:visited {
     color: var(--border-dark) !important;
 }
 
-/* Layout for the buttons */
+/* Ensure buttons sit nicely under the image */
+.image-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
 .profile-btns {
     display: flex;
     gap: 10px;
-    width: 100%; /* Makes buttons match the width of the photo area */
-    justify-content: center;
+    width: 100%;
 }
 
 .btn-sm {
-    padding: 8px 12px;
+    flex: 1;
+    text-align: center;
     font-size: 0.9rem;
-    flex: 1; /* Makes both buttons the same size */
+    padding: 8px 5px;
+    background: var(--royal-orange);
+    border: 2px solid var(--border-dark);
 }
