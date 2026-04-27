@@ -59,45 +59,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- SPOTIFY (LANYARD) SYSTEM ---
   // We move this INSIDE the DOMContentLoaded block so it can see the HTML elements
-async function getLanyard() {
+// --- SPOTIFY (LANYARD) SYSTEM ---
+  let isListening = false; // Global flag to tell the bars when to move
+
+  async function getLanyard() {
     const DISCORD_ID = "1011606404030799902";
     try {
       const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
-      const result = await response.json();
-      const data = result.data;
-
-      // Debugging: Right-click your page -> Inspect -> Console to see this
-      console.log("Spotify Data:", data.listening_to_spotify ? data.spotify.song : "Not playing");
+      const { data } = await response.json();
 
       const trackName = document.getElementById('track-name');
       const trackArtist = document.getElementById('track-artist');
       const trackArt = document.getElementById('track-art');
 
       if (data.listening_to_spotify) {
+        isListening = true;
         trackName.innerText = data.spotify.song.toUpperCase();
         trackArtist.innerText = data.spotify.artist.toUpperCase();
         trackArt.src = data.spotify.album_art_url;
-        
-        document.querySelectorAll('.bar').forEach(bar => {
-          bar.style.height = Math.random() * 25 + 5 + "px";
-          bar.style.backgroundColor = "#f7c667"; 
-        });
       } else {
-        // Fallback text if nothing is playing
+        isListening = false;
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
-        trackArt.src = "images/placeholder_art.gif"; // Check file extension!
-        document.querySelectorAll('.bar').forEach(bar => {
-            bar.style.height = "5px";
-            bar.style.backgroundColor = "#333";
-        });
+        trackArt.src = "images/placeholder_art.png";
+        // Reset bars to flat
+        document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
       }
     } catch (error) {
       console.error("Lanyard Error:", error);
     }
   }
 
-  // Start the Spotify check
+  // NEW: Fast Animation Loop (Runs every 150ms for smooth movement)
+  function animateVisualizer() {
+    if (isListening) {
+      document.querySelectorAll('.bar').forEach(bar => {
+        const randomHeight = Math.floor(Math.random() * 25) + 5;
+        bar.style.height = `${randomHeight}px`;
+      });
+    }
+    setTimeout(animateVisualizer, 150); 
+  }
+
+  // Start both loops
   getLanyard();
-  setInterval(getLanyard, 5000); // Check every 5 seconds
+  animateVisualizer(); // Start the dancing bars
+  setInterval(getLanyard, 5000); // Check for new songs every 5 seconds
 });
