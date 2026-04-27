@@ -104,3 +104,33 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
   }
 });
+
+async function getLanyard() {
+    const DISCORD_ID = "1011606404030799902";
+    try {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+        const { data } = await response.json();
+
+        const trackName = document.getElementById('track-name');
+        const trackArtist = document.getElementById('track-artist');
+        const trackArt = document.getElementById('track-art');
+
+        if (data.listening_to_spotify) {
+            trackName.innerText = data.spotify.song;
+            trackArtist.innerText = data.spotify.artist;
+            trackArt.src = data.spotify.album_art_url;
+            document.querySelectorAll('.bar').forEach(b => b.style.animationPlayState = 'running');
+        } else {
+            trackName.innerText = "Nothing playing";
+            trackArtist.innerText = "Spotify Offline";
+            trackArt.src = "images/placeholder_art.png";
+            document.querySelectorAll('.bar').forEach(b => b.style.animationPlayState = 'paused');
+        }
+    } catch (error) {
+        console.error("Lanyard Error:", error);
+    }
+}
+
+// Refresh every 30 seconds
+setInterval(getLanyard, 30000);
+getLanyard();

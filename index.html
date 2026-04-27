@@ -69,7 +69,7 @@
                 <div class="project-info">
                     <h3>STITCH & SCOUT</h3>
                         <div class="tech-tags">
-                            <span>Python |</span> <span>Gemini Vision AI |</span> <span>Streamlit |</span> <span>eBay API |</span> <span>Scikit-Learn |</span>
+                            <span>Python</span> <span>Gemini Vision AI</span> <span>Streamlit</span> <span>eBay API</span> <span>Scikit-Learn</span>
                         </div>
                     <p>An end-to-end computer vision solution designed to automate the tedious market research phase of secondhand reselling. This tool leverages Gemini Vision AI to perform multi-label 
                         classification on uploaded garment photos, identifying brand, style, and material. The backend then orchestrates real-time data retrieval via the eBay API, using Scikit-Learn for 
@@ -86,7 +86,7 @@
                 <div class="project-info">
                     <h3>2018 NWSL EXPECTED GOALS (xG) MODEL</h3>
                     <div class="tech-tags">
-                            <span>R |</span> <span>Logistic Regression |</span> <span>Sports Analytics |</span> <span>Marginal Effects |</span>
+                            <span>R</span> <span>Logistic Regression</span> <span>Sports Analytics</span> <span>Marginal Effects</span>
                         </div>
                     <p>A predictive modeling project focused on quantifying shot quality in women’s professional soccer. Using Logistic Regression, I built a model to calculate 
                         shot conversion probabilities based on spatial variables like shot location, goalkeeper positioning, and defensive pressure. The study evaluates individual 
@@ -102,7 +102,7 @@
                 <div class="project-info">
                     <h3>NFL WIDE RECEIVER CLUSTERING</h3>
                     <div class="tech-tags">
-                            <span>R |</span> <span>K-Means Clustering |</span> <span>Unsupervised Learning |</span> <span>Scouting |</span>
+                            <span>R</span> <span>K-Means Clustering</span> <span>Unsupervised Learning</span> <span>Scouting</span>
                         </div>
                     <p>Redefining player archetypes through unsupervised machine learning. This project utilizes K-Means Clustering to group historical NFL Wide Receivers into five distinct 
                         performance profiles based on standardized z-score metrics. By mapping 2024 Draft Prospects onto these established clusters via elbow plots and cluster visualization, 
@@ -134,24 +134,32 @@
         </div>
     </div>
 
-    <div class="project-card spotify-card" id="spotify-widget">
-        <div class="spotify-header">
-            <img src="icons/spotify_icon.png" alt="Spotify" class="project-icon">
-            <span>NOW PLAYING</span>
-        </div>
-        <div class="spotify-content">
-            <img id="track-art" src="images/placeholder_art.png" alt="Album Art">
-            <div class="track-info">
-                <div id="track-name">Loading...</div>
-                <div id="track-artist">Connecting to Spotify</div>
-            </div>
-        </div>
-        <div class="visualizer">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+    <section id="spotify" class="window winamp-player">
+    <div class="window-header">
+        <span>WINAMP - NOW PLAYING</span>
+        <div class="dot-container">
+            <div class="dot" style="background: #ff5f56;"></div>
+            <div class="dot" style="background: #27c93f;"></div>
         </div>
     </div>
+    <div class="content player-body">
+        <div class="player-top">
+            <img id="track-art" src="images/placeholder_art.png" alt="Album Art">
+            <div class="player-display">
+                <div id="track-name" class="marquee">Not Listening</div>
+                <div id="track-artist">Spotify Offline</div>
+                <div class="visualizer">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="player-btn">PREV</button>
+            <button class="player-btn">PLAY</button>
+            <button class="player-btn">NEXT</button>
+        </div>
+    </div>
+</section>
 
         <section id="contact" class="window">
           <div class="window-header"><span>CONTACT_ME.URL</span></div>
