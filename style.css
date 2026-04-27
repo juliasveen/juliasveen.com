@@ -400,3 +400,67 @@ body {
     background: var(--royal-orange);
     border: 2px solid var(--border-dark);
 }
+
+/* Container for the list */
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* The individual static card */
+.full-project-card {
+    display: flex;
+    gap: 20px;
+    background: var(--window-bg);
+    border: 2px solid var(--border-dark);
+    padding: 15px;
+    box-shadow: 5px 5px 0px var(--accent-pink);
+    align-items: center;
+}
+
+.project-visual {
+    flex: 1;
+    max-width: 40%; /* Image takes up 40% of the card */
+}
+
+.project-visual img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--border-dark);
+    display: block;
+}
+
+.project-info {
+    flex: 1.5;
+    text-align: left;
+}
+
+.project-info h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--border-dark);
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Styling for the GitHub big link */
+.github-large {
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Mobile Responsiveness: Stack image on top of text */
+@media (max-width: 768px) {
+    .full-project-card {
+        flex-direction: column;
+    }
+    .project-visual {
+        max-width: 100%;
+    }
+}

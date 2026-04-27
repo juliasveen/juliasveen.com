@@ -20,6 +20,7 @@
             <ul>
                 <li><a href="#about">ABOUT.EXE</a></li>
                 <li><a href="#projects">PROJECTS.SYS</a></li>
+                <li><a href="#spotify">CURRENTLY_LISTENING.MP4</a></li>
                 <li><a href="#contact">CONTACT.URL</a></li>
             </ul>
         </nav>
@@ -44,7 +45,6 @@
                     </div>
                     <p>⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮ Hi, I’m Julia! I’m a Master’s student in Information Technology at Florida State University, currently earning an Information Architecture certificate. I enjoy combining creativity with technology, especially through web development, data science, and exploring the world of AI. I am working toward a career in data science or AI development and love experimenting with new tools and ideas that help me grow these skills. Outside of tech, I enjoy watching MLB and FSU sports, listening to music, thrifting, and finding new recipes to try. ⋆˚｡⋆୨୧˚✧˖°.‧₊⋅˚✮</p>
                 </div>
-                
                 <div class="image-column">
                     <div class="profile-img">
                         <img src="images/profile.jpeg" alt="Julia Sveen">
@@ -58,44 +58,44 @@
         </div>
     </section>
 
-        <section id="projects" class="window">
-            <div class="window-header"><span>PROJECTS.SYS</span></div>
-            <div class="content bento-grid">
-                <div class="project-card" 
-                    data-title="STITCH & SCOUT" 
-                    data-desc="AI-powered resale pricing tool using Gemini Vision and Random Forest models to price items from a single photo." 
-                    data-img="images/demo.gif" 
-                    data-link="https://github.com/juliasveen/stitch-and-scout">
-                    <img src="icons/stitch_icon.png" alt="icon" class="project-icon">
-                    <span>STITCH & SCOUT</span>
+    <section id="projects" class="window">
+        <div class="window-header"><span>PROJECTS.SYS</span></div>
+        <div class="content project-list">
+            
+            <div class="full-project-card">
+                <div class="project-visual">
+                    <img src="images/stitch_demo.gif" alt="Stitch & Scout Demo">
                 </div>
-                <div class="project-card" 
-                    data-title="NFL WR CLUSTERING CASE STUDY" 
-                    data-desc="Analysis of NFL wide receiver performance using clustering techniques." 
-                    data-img="images/nfl_wr_clustering.png" 
-                    data-link="https://github.com/juliasveen/Sports-Analytics-Case-Studies/tree/main/Case%20Study%203">
-                    <img src="icons/nfl_icon.png" alt="icon" class="project-icon">
-                    <span>NFL WR CLUSTERING MODEL</span>
+                <div class="project-info">
+                    <h3>STITCH & SCOUT</h3>
+                    <p>AI-powered resale pricing tool using Gemini Vision to identify clothing items and suggest market value.</p>
+                    <a href="https://github.com/juliasveen" target="_blank" class="retro-btn btn-sm">VIEW GITHUB</a>
                 </div>
-                <div class="project-card" 
-                    data-title="NWSL xG MODEL" 
-                    data-desc="Prediction of expected goals in the National Women's Soccer League using machine learning models." 
-                    data-img="images/nwsl_expected_goals.png" 
-                    data-link="https://github.com/juliasveen/Sports-Analytics-Case-Studies/tree/main/Case%20Study%202">
-                    <img src="icons/nwsl_icon.png" alt="icon" class="project-icon">
-                    <span>NWSL xG MODEL</span>
-                </div>
-                <a href="https://github.com/juliasveen" target="_blank" class="project-card link-card">
-                    <img src="icons/github.png" alt="icon" class="project-icon">
-                    <span>GITHUB FOR MORE PROJECTS!</span>
-                </a>
             </div>
-        </section>
+
+            <div class="full-project-card">
+                <div class="project-visual">
+                    <img src="images/soccer_study.png" alt="NWSL Study">
+                </div>
+                <div class="project-info">
+                    <h3>2018 NWSL EXPECTED GOALS</h3>
+                    <p>A deep-dive data case study analyzing scoring probabilities in women's professional soccer.</p>
+                    <a href="https://github.com/juliasveen" target="_blank" class="retro-btn btn-sm">VIEW GITHUB</a>
+                </div>
+            </div>
+
+            <a href="https://github.com/juliasveen" target="_blank" class="project-card link-card github-large">
+                <img src="icons/github.png" alt="icon" class="project-icon">
+                <span>SEE ALL PROJECTS ON GITHUB</span>
+            </a>
+
+        </div>
+</section>
 
     <div id="project-modal" class="modal-overlay">
         <div class="window modal-window">
             <div class="window-header">
-                <span id="modal-title-bar">PROJECT_INFO.EXE</span>
+            <div class="window-header"><span>PROJECTS.SYS</span></div>
                 <div class="modal-close">X</div>
             </div>
             <div class="content modal-content">
@@ -104,6 +104,25 @@
                 <p id="modal-description"></p>
                 <a id="modal-github" href="#" target="_blank" class="retro-btn">VIEW ON GITHUB</a>
             </div>
+        </div>
+    </div>
+
+    <div class="project-card spotify-card" id="spotify-widget">
+        <div class="spotify-header">
+            <img src="icons/spotify_icon.png" alt="Spotify" class="project-icon">
+            <span>NOW PLAYING</span>
+        </div>
+        <div class="spotify-content">
+            <img id="track-art" src="images/placeholder_art.png" alt="Album Art">
+            <div class="track-info">
+                <div id="track-name">Loading...</div>
+                <div id="track-artist">Connecting to Spotify</div>
+            </div>
+        </div>
+        <div class="visualizer">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
         </div>
     </div>
 

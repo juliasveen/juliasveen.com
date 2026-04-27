@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+/*
   // --- PROJECT POP-UP LOGIC ---
   if (projectCards.length > 0 && projectModal) {
     projectCards.forEach(card => {
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+ */
 
   if (modalClose) {
     modalClose.addEventListener('click', () => {
