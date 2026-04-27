@@ -62,47 +62,35 @@ document.addEventListener("DOMContentLoaded", () => {
 // --- SPOTIFY (LANYARD) SYSTEM ---
   let isListening = false; // Global flag to tell the bars when to move
 
-  async function getLanyard() {
-    const DISCORD_ID = "1011606404030799902";
+  async function updateSpotify() {
     try {
-      const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
-      const { data } = await response.json();
+      // This calls the /api/now-playing.js file we just made
+      const response = await fetch('/api/now-playing');
+      const data = await response.json();
 
       const trackName = document.getElementById('track-name');
       const trackArtist = document.getElementById('track-artist');
       const trackArt = document.getElementById('track-art');
 
-      if (data.listening_to_spotify) {
-        isListening = true;
-        trackName.innerText = data.spotify.song.toUpperCase();
-        trackArtist.innerText = data.spotify.artist.toUpperCase();
-        trackArt.src = data.spotify.album_art_url;
+      if (data.isPlaying) {
+        isListening = true; 
+        trackName.innerText = data.title.toUpperCase();
+        trackArtist.innerText = data.artist.toUpperCase();
+        trackArt.src = data.albumImageUrl;
       } else {
         isListening = false;
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
         trackArt.src = "images/placeholder_art.png";
-        // Reset bars to flat
         document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
       }
     } catch (error) {
-      console.error("Lanyard Error:", error);
+      console.error("Spotify API Error:", error);
     }
-  }
-
-  // NEW: Fast Animation Loop (Runs every 150ms for smooth movement)
-  function animateVisualizer() {
-    if (isListening) {
-      document.querySelectorAll('.bar').forEach(bar => {
-        const randomHeight = Math.floor(Math.random() * 25) + 5;
-        bar.style.height = `${randomHeight}px`;
-      });
-    }
-    setTimeout(animateVisualizer, 150); 
   }
 
   // Start both loops
-  getLanyard();
+  updateSpotify();
   animateVisualizer(); // Start the dancing bars
-  setInterval(getLanyard, 5000); // Check for new songs every 5 seconds
+  setInterval(updateSpotify, 5000); // Check for new songs every 5 seconds
 });
