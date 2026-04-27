@@ -59,11 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- SPOTIFY (LANYARD) SYSTEM ---
   // We move this INSIDE the DOMContentLoaded block so it can see the HTML elements
-  async function getLanyard() {
+async function getLanyard() {
     const DISCORD_ID = "1011606404030799902";
     try {
       const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
-      const { data } = await response.json();
+      const result = await response.json();
+      const data = result.data;
+
+      // Debugging: Right-click your page -> Inspect -> Console to see this
+      console.log("Spotify Data:", data.listening_to_spotify ? data.spotify.song : "Not playing");
 
       const trackName = document.getElementById('track-name');
       const trackArtist = document.getElementById('track-artist');
@@ -74,15 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
         trackArtist.innerText = data.spotify.artist.toUpperCase();
         trackArt.src = data.spotify.album_art_url;
         
-        // Randomize visualizer bars
         document.querySelectorAll('.bar').forEach(bar => {
           bar.style.height = Math.random() * 25 + 5 + "px";
-          bar.style.backgroundColor = "#a8b465"; 
+          bar.style.backgroundColor = "#f7c667"; 
         });
       } else {
+        // Fallback text if nothing is playing
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
-        trackArt.src = "images/placeholder_art.png";
+        trackArt.src = "images/placeholder_art.gif"; // Check file extension!
         document.querySelectorAll('.bar').forEach(bar => {
             bar.style.height = "5px";
             bar.style.backgroundColor = "#333";
