@@ -482,77 +482,56 @@ body {
     font-weight: bold;
 }
 
-.winamp-player {
-    max-width: 350px; /* Small and compact */
-    margin: 20px auto;
-    background: #222 !important; /* Classic dark Winamp look */
-    color: #a8b465 !important; /* Matrix green text */
-    font-family: 'VT323', monospace;
-    border: 2px solid var(--border-dark);
-}
-
 .player-body {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    background: #000 !important; /* Classic Winamp black */
+    padding: 20px;
+    border-top: 2px solid var(--border-dark);
 }
 
-.player-top {
+.player-inner {
     display: flex;
-    gap: 12px;
+    gap: 20px;
+    align-items: center;
 }
 
 #track-art {
-    width: 60px;
-    height: 60px;
-    border: 1px solid #555;
-    image-rendering: pixelated;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #555;
+    box-shadow: 4px 4px 0px #333;
 }
 
 .player-display {
     flex: 1;
-    background: #000;
-    padding: 5px;
-    border: 1px inset #555;
-    overflow: hidden;
+    background: #111;
+    border: 2px inset #444;
+    padding: 15px;
+    color: #00FF00; /* Neon Green */
+    font-family: 'VT323', monospace;
 }
 
-.marquee {
-    white-space: nowrap;
-    animation: scroll-text 10s linear infinite;
-}
-
-@keyframes scroll-text {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
+.track-text { font-size: 1.8rem; line-height: 1; margin-bottom: 5px; }
+.artist-text { font-size: 1.2rem; color: #00AA00; }
 
 .player-controls {
     display: flex;
-    justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.player-btn {
+.winamp-btn {
     flex: 1;
     background: #444;
-    border: 1px outset #666;
-    color: #ccc;
-    font-size: 0.7rem;
+    border: 2px outset #666;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
-.visualizer {
-    display: flex;
-    align-items: flex-end;
-    gap: 2px;
-    height: 15px;
-    margin-top: 5px;
-}
+.winamp-btn:active { border: 2px inset #666; }
 
-.bar {
-    width: 3px;
-    background: #a8b465;
-    animation: bounce 0.5s ease infinite alternate;
-}
+/* Visualizer Bars */
+.visualizer { display: flex; gap: 4px; height: 30px; align-items: flex-end; margin-top: 10px; }
+.bar { width: 6px; background: #00FF00; height: 5px; transition: height 0.2s; }

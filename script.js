@@ -131,6 +131,6 @@ async function getLanyard() {
     }
 }
 
-// Refresh every 30 seconds
-setInterval(getLanyard, 30000);
-getLanyard();
+// Update every 5 seconds for a "live" feel
+setInterval(updateSpotify, 5000);
+updateSpotify();
