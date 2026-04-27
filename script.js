@@ -4,15 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const hamburgerMenu = document.querySelector('.nav-icon');
   const navContent = document.querySelector('#nav-content');
   const closeNavButton = document.querySelector('.close-btn');
-  const navLinks = document.querySelectorAll('#nav-content a'); // Grab all links in menu
-  const scrollButton = document.querySelector(".scroll-top");
+  const navLinks = document.querySelectorAll('#nav-content a');
 
-  // --- PROJECT MODAL ELEMENTS ---
-  const projectCards = document.querySelectorAll('.project-card:not(.link-card)');
-  const projectModal = document.getElementById('project-modal');
-  const modalClose = document.querySelector('.modal-close');
-
-  // Menu Open
   if (hamburgerMenu && navContent) {
     hamburgerMenu.addEventListener('click', () => {
       navContent.classList.add('show');
@@ -20,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Menu Close (X Button)
   if (closeNavButton && navContent) {
     closeNavButton.addEventListener('click', () => {
       navContent.classList.remove('show');
@@ -28,50 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close menu when a link is clicked so you can see the section!
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navContent.classList.remove('show');
       document.body.style.overflow = "auto";
     });
-  });
-
-/*
-  // --- PROJECT POP-UP LOGIC ---
-  if (projectCards.length > 0 && projectModal) {
-    projectCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const title = card.getAttribute('data-title') || "Project";
-        const desc = card.getAttribute('data-desc') || "";
-        const img = card.getAttribute('data-img') || "";
-        const link = card.getAttribute('data-link') || "#";
-
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-description').innerText = desc;
-        document.getElementById('modal-img').src = img;
-        document.getElementById('modal-github').href = link;
-        document.getElementById('modal-title-bar').innerText = title + ".SYS";
-
-        projectModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden'; 
-      });
-    });
-  }
- */
-
-  if (modalClose) {
-    modalClose.addEventListener('click', () => {
-      projectModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
-  }
-
-  // Close modal on outside click
-  window.addEventListener('click', (e) => {
-    if (e.target === projectModal) {
-      projectModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
   });
 
   // --- TYPING EFFECT ---
@@ -103,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     setTimeout(type, 1000);
   }
-});
 
-// --- SPOTIFY / LANYARD SYSTEM ---
-  async function updateSpotify() {
+  // --- SPOTIFY (LANYARD) SYSTEM ---
+  // We move this INSIDE the DOMContentLoaded block so it can see the HTML elements
+  async function getLanyard() {
     const DISCORD_ID = "1011606404030799902";
     try {
       const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
@@ -117,25 +70,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const trackArt = document.getElementById('track-art');
 
       if (data.listening_to_spotify) {
-        trackName.innerText = data.spotify.song;
-        trackArtist.innerText = data.spotify.artist;
+        trackName.innerText = data.spotify.song.toUpperCase();
+        trackArtist.innerText = data.spotify.artist.toUpperCase();
         trackArt.src = data.spotify.album_art_url;
         
-        // Animated bars
+        // Randomize visualizer bars
         document.querySelectorAll('.bar').forEach(bar => {
           bar.style.height = Math.random() * 25 + 5 + "px";
+          bar.style.backgroundColor = "#a8b465"; 
         });
       } else {
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
-        trackArt.src = "images/placeholder_art.png"; // Make sure this exists!
-        document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
+        trackArt.src = "images/placeholder_art.png";
+        document.querySelectorAll('.bar').forEach(bar => {
+            bar.style.height = "5px";
+            bar.style.backgroundColor = "#333";
+        });
       }
     } catch (error) {
       console.error("Lanyard Error:", error);
     }
   }
 
-  // Run immediately and then every 5 seconds
-  updateSpotify();
-  setInterval(updateSpotify, 5000);
+  // Start the Spotify check
+  getLanyard();
+  setInterval(getLanyard, 5000); // Check every 5 seconds
+});

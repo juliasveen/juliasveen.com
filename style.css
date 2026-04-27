@@ -506,12 +506,12 @@ body {
     background: #111;
     border: 2px inset #444;
     padding: 15px;
-    color: #a8b465; 
+    color: #f7c667; 
     font-family: 'VT323', monospace;
 }
 
 .track-text { font-size: 1.8rem; line-height: 1; margin-bottom: 5px; }
-.artist-text { font-size: 1.2rem; color: #a8b465; }
+.artist-text { font-size: 1.2rem; color: #f7c667; }
 
 .player-controls {
     display: flex;
@@ -534,4 +534,4 @@ body {
 
 /* Visualizer Bars */
 .visualizer { display: flex; gap: 4px; height: 30px; align-items: flex-end; margin-top: 10px; }
-.bar { width: 6px; background: #00FF00; height: 5px; transition: height 0.2s; }
+.bar { width: 6px; background: #f7c667; height: 5px; transition: height 0.2s; }
