@@ -486,7 +486,7 @@ body {
     max-width: 350px; /* Small and compact */
     margin: 20px auto;
     background: #222 !important; /* Classic dark Winamp look */
-    color: #00FF00 !important; /* Matrix green text */
+    color: #a8b465 !important; /* Matrix green text */
     font-family: 'VT323', monospace;
     border: 2px solid var(--border-dark);
 }
@@ -553,6 +553,6 @@ body {
 
 .bar {
     width: 3px;
-    background: #00FF00;
+    background: #a8b465;
     animation: bounce 0.5s ease infinite alternate;
 }

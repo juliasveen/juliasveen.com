@@ -134,29 +134,35 @@
         </div>
     </div>
 
-    <section id="spotify" class="window winamp-player">
+    <section id="spotify" class="window">
     <div class="window-header">
-        <span>WINAMP - NOW PLAYING</span>
+        <span>NOW_PLAYING.EXE</span>
         <div class="dot-container">
             <div class="dot" style="background: #ff5f56;"></div>
+            <div class="dot" style="background: #ffbd2e;"></div>
             <div class="dot" style="background: #27c93f;"></div>
         </div>
     </div>
     <div class="content player-body">
-        <div class="player-top">
-            <img id="track-art" src="images/placeholder_art.png" alt="Album Art">
+        <div class="player-inner">
+            <img id="track-art" src="images/placeholder_art.gif" alt="Album Art">
             <div class="player-display">
-                <div id="track-name" class="marquee">Not Listening</div>
-                <div id="track-artist">Spotify Offline</div>
+                <div class="status-bar">NOW PLAYING:</div>
+                <div id="track-name" class="track-text">Not Listening</div>
+                <div id="track-artist" class="artist-text">Spotify Offline</div>
+                
                 <div class="visualizer">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
                     <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
                 </div>
             </div>
         </div>
         <div class="player-controls">
-            <button class="player-btn">PREV</button>
-            <button class="player-btn">PLAY</button>
-            <button class="player-btn">NEXT</button>
+            <div class="winamp-btn">PREV</div>
+            <div class="winamp-btn">PLAY</div>
+            <div class="winamp-btn">PAUSE</div>
+            <div class="winamp-btn">STOP</div>
+            <div class="winamp-btn">NEXT</div>
         </div>
     </div>
 </section>
