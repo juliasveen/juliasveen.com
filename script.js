@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateSpotify() {
     try {
-      // This calls the /api/now-playing.js file we just made
-      const response = await fetch('/api/now-playing');
+      // We use a relative path so Vercel knows to look at its own /api folder
+      const response = await fetch('./api/now-playing');
       const data = await response.json();
 
       const trackName = document.getElementById('track-name');
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isListening = false;
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
-        trackArt.src = "images/placeholder_art.gif";
+        trackArt.src = "images/placeholder_art.png";
         document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
       }
     } catch (error) {
@@ -89,8 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Start both loops
+  function animateVisualizer() {
+    if (isListening) {
+      document.querySelectorAll('.bar').forEach(bar => {
+        const randomHeight = Math.floor(Math.random() * 25) + 5;
+        bar.style.height = `${randomHeight}px`;
+      });
+    }
+    setTimeout(animateVisualizer, 300); 
+  }
+
+  // Initial call and intervals
   updateSpotify();
-  animateVisualizer(); // Start the dancing bars
-  setInterval(updateSpotify, 5000); // Check for new songs every 5 seconds
+  animateVisualizer();
+  setInterval(updateSpotify, 5000);
 });
