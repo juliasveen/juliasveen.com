@@ -464,3 +464,16 @@ body {
         max-width: 100%;
     }
 }
+
+.tech-tags {
+    margin-bottom: 10px;
+}
+.tech-tags span {
+    font-size: 0.8rem;
+    background: var(--pastel-purple);
+    color: var(--border-dark);
+    padding: 2px 8px;
+    border: 1px solid var(--border-dark);
+    margin-right: 5px;
+    text-transform: uppercase;
+}
