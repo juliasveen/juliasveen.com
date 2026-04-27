@@ -57,15 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(type, 1000);
   }
 
-  // --- SPOTIFY (LANYARD) SYSTEM ---
-  // We move this INSIDE the DOMContentLoaded block so it can see the HTML elements
-// --- SPOTIFY (LANYARD) SYSTEM ---
-  let isListening = false; // Global flag to tell the bars when to move
+// --- SPOTIFY (DIRECT API) SYSTEM ---
+  let isListening = false; 
 
   async function updateSpotify() {
     try {
-      // We use a relative path so Vercel knows to look at its own /api folder
       const response = await fetch('/api/now-playing');
+      
+      // If the response isn't OK (like a 404), stop here
+      if (!response.ok) {
+        throw new Error(`Server responded with ${response.status}`);
+      }
+
       const data = await response.json();
 
       const trackName = document.getElementById('track-name');
@@ -89,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // Define this function SEPARATELY so the script can see it
   function animateVisualizer() {
     if (isListening) {
       document.querySelectorAll('.bar').forEach(bar => {
@@ -96,11 +100,11 @@ document.addEventListener("DOMContentLoaded", () => {
         bar.style.height = `${randomHeight}px`;
       });
     }
-    setTimeout(animateVisualizer, 300); 
+    setTimeout(animateVisualizer, 400); 
   }
 
-  // Initial call and intervals
+  // NOW call them
   updateSpotify();
   animateVisualizer();
-  setInterval(updateSpotify, 5000);
-});
+  setInterval(updateSpotify, 10000); 
+}); 
