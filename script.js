@@ -105,32 +105,37 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-async function getLanyard() {
+// --- SPOTIFY / LANYARD SYSTEM ---
+  async function updateSpotify() {
     const DISCORD_ID = "1011606404030799902";
     try {
-        const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
-        const { data } = await response.json();
+      const response = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_ID}`);
+      const { data } = await response.json();
 
-        const trackName = document.getElementById('track-name');
-        const trackArtist = document.getElementById('track-artist');
-        const trackArt = document.getElementById('track-art');
+      const trackName = document.getElementById('track-name');
+      const trackArtist = document.getElementById('track-artist');
+      const trackArt = document.getElementById('track-art');
 
-        if (data.listening_to_spotify) {
-            trackName.innerText = data.spotify.song;
-            trackArtist.innerText = data.spotify.artist;
-            trackArt.src = data.spotify.album_art_url;
-            document.querySelectorAll('.bar').forEach(b => b.style.animationPlayState = 'running');
-        } else {
-            trackName.innerText = "Nothing playing";
-            trackArtist.innerText = "Spotify Offline";
-            trackArt.src = "images/placeholder_art.png";
-            document.querySelectorAll('.bar').forEach(b => b.style.animationPlayState = 'paused');
-        }
+      if (data.listening_to_spotify) {
+        trackName.innerText = data.spotify.song;
+        trackArtist.innerText = data.spotify.artist;
+        trackArt.src = data.spotify.album_art_url;
+        
+        // Animated bars
+        document.querySelectorAll('.bar').forEach(bar => {
+          bar.style.height = Math.random() * 25 + 5 + "px";
+        });
+      } else {
+        trackName.innerText = "NOT LISTENING";
+        trackArtist.innerText = "SPOTIFY OFFLINE";
+        trackArt.src = "images/placeholder_art.png"; // Make sure this exists!
+        document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
+      }
     } catch (error) {
-        console.error("Lanyard Error:", error);
+      console.error("Lanyard Error:", error);
     }
-}
+  }
 
-// Update every 5 seconds for a "live" feel
-setInterval(updateSpotify, 5000);
-updateSpotify();
+  // Run immediately and then every 5 seconds
+  updateSpotify();
+  setInterval(updateSpotify, 5000);
