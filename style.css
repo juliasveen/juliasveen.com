@@ -232,7 +232,7 @@ body {
     background-image: radial-gradient(var(--border-dark) 1px, transparent 1px);
     background-size: 20px 20px;
     z-index: 999;
-    display: none; /* This is why it hides! */
+    display: none; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -540,4 +540,28 @@ body {
     height: 5px;
     /* Add this line below */
     transition: height 0.15s ease-in-out; 
+}
+
+/* Mobile Menu Fix */
+@media (max-width: 768px) {
+    #nav-content ul {
+        padding: 60px 20px; /* Give it space from the top X button */
+        gap: 15px; /* Reduce gap between items */
+    }
+
+    #nav-content a {
+        font-size: 1.8rem; /* Smaller than the desktop 3rem */
+        letter-spacing: 1px;
+        white-space: nowrap; /* Keeps the .MP4 on the same line */
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* If the text is STILL too long for very small phones */
+    @media (max-width: 380px) {
+        #nav-content a {
+            font-size: 1.4rem; 
+        }
+    }
 }
