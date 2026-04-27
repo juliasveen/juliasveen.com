@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function updateSpotify() {
     try {
       // We use a relative path so Vercel knows to look at its own /api folder
-      const response = await fetch('./api/now-playing');
+      const response = await fetch('/api/now-playing');
       const data = await response.json();
 
       const trackName = document.getElementById('track-name');
