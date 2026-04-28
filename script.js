@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateSpotify() {
     try {
-      const response = await fetch('/api/now-playing.js');
+      const response = await fetch('https://vercel.com/juliasveens-projects/juliasveen-com');
       
       // If the response isn't OK (like a 404), stop here
       if (!response.ok) {
@@ -106,5 +106,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // NOW call them
   updateSpotify();
   animateVisualizer();
-  setInterval(updateSpotify, 10000); 
+  setInterval(updateSpotify, 5000); 
 }); 
