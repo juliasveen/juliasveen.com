@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateSpotify() {
     try {
-      const response = await fetch('juliasveen-6ccq6278k-juliasveens-projects.vercel.app');
-      
+const response = await fetch('https://juliasveen-6ccq6278k-juliasveens-projects.vercel.app/api/now-playing.js');      
       // If the response isn't OK (like a 404), stop here
       if (!response.ok) {
         throw new Error(`Server responded with ${response.status}`);
