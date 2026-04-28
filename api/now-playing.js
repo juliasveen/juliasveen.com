@@ -24,8 +24,15 @@ const getAccessToken = async () => {
 };
 
 export default async function handler(req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET');
+  // 1. Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Allows any site to access this API
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // 2. Handle the "Preflight" request (The browser sends this first)
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
   try {
     const { access_token } = await getAccessToken();
     
