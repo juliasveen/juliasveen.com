@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isListening = false;
         trackName.innerText = "NOT LISTENING";
         trackArtist.innerText = "SPOTIFY OFFLINE";
-        trackArt.src = "images/placeholder_art.png";
+        trackArt.src = "images/placeholder_art.gif";
         document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
       }
     } catch (error) {
