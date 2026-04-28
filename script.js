@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function updateSpotify() {
     try {
-      const response = await fetch('/api/now-playing');
+      const response = await fetch('/api/now-playing.js');
       
       // If the response isn't OK (like a 404), stop here
       if (!response.ok) {
