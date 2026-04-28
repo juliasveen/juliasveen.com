@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         trackArt.src = data.albumImageUrl;
       } else {
         isListening = false;
-        trackName.innerText = "NOT LISTENING";
+        trackName.innerText = "NOTHING!";
         trackArtist.innerText = "SPOTIFY OFFLINE";
         trackArt.src = "images/placeholder_art.gif";
         document.querySelectorAll('.bar').forEach(bar => bar.style.height = "5px");
